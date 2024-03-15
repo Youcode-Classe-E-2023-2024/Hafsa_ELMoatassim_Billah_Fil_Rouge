@@ -105,5 +105,5 @@
             </div>
         </div>
     </div>
-
 </body>
+@include('Components.footer')
