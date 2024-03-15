@@ -1,4 +1,4 @@
-@include('layout')
+@include('Components.layout')
 
 <div class="bg-no-repeat bg-cover bg-center relative"
      style="background-image: url(https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
@@ -8,8 +8,10 @@
             <div class="self-start hidden lg:flex flex-col  text-white">
                 <img src="" class="mb-3">
                 <h1 class="mb-3 font-bold text-5xl">Hi ? Welcome Back </h1>
-                <p class="pr-3">Discover the rejuvenating power of green tea for you skin. Our carefully curated green tea skincare products harness the
-                    antioxidant-rich properties of this natural wonder, protecting your skin from external aggressors, promoting your skin from external
+                <p class="pr-3">Discover the rejuvenating power of green tea for you skin. Our carefully curated green
+                    tea skincare products harness the
+                    antioxidant-rich properties of this natural wonder, protecting your skin from external aggressors,
+                    promoting your skin from external
                     aggressors, promoting hydration, and minimizing fine lines.
                 </p>
             </div>
@@ -24,16 +26,16 @@
                     <div class="space-y-2">
                         <label class="text-sm font-medium text-gray-700 tracking-wide">Email</label>
                         <input
-                            class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                            type="" placeholder="mail@gmail.com">
+                                class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                                type="" placeholder="mail@gmail.com">
                     </div>
                     <div class="space-y-2">
                         <label class="mb-5 text-sm font-medium text-gray-700 tracking-wide">
                             Password
                         </label>
                         <input
-                            class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                            type="" placeholder="Enter your password">
+                                class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                                type="" placeholder="Enter your password">
                     </div>
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
@@ -54,10 +56,11 @@
                                 class="w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                             Login
                         </button>
-                        <a href="/register"><button type="submit"
-                                class="mt-5 w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
-                            Register
-                        </button>
+                        <a href="/register">
+                            <button type="submit"
+                                    class="mt-5 w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                                Register
+                            </button>
                         </a>
                     </div>
                 </div>
