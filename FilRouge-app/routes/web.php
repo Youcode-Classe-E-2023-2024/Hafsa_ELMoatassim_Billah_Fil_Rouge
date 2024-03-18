@@ -24,3 +24,7 @@ Route::get('/Description', function () {
     return view('Description');
 });
 
+Route::get('/Contact', function () {
+    return view('Contact');
+});
+

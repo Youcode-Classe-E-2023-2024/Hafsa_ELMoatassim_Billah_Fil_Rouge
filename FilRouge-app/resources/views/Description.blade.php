@@ -16,7 +16,6 @@
     }
 </style>
 
-<body class="h-screen" style="background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(198,208,191,1) 0%);">
 @include('Components.nav')
 @include('Components.SearchBar')
 
@@ -108,7 +107,6 @@
 
 
 @include('Components.footer')
-</body>
 
 <script>
     function decrement(e) {

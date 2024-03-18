@@ -86,7 +86,7 @@
     <div class=" flex flex-col md:flex-row justify-center md:space-y-0 my-4 space-y-4  text-center text-black">
         <a href="/" class="mx-8 hover:text-green-900 active" aria-current="page"> Home </a>
         <a href="/All_products" class="mx-8 hover:text-green-900"> Products </a>
-        <a href="#" class="mx-8 hover:text-green-900"> Support </a>
+        <a href="/Contact" class="mx-8 hover:text-green-900"> Contact Us </a>
         <a href="#" class="mx-8 hover:text-green-900"> About Us </a>
     </div>
 </nav>

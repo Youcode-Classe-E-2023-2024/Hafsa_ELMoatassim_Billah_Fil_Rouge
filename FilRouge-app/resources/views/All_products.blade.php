@@ -1,10 +1,7 @@
 @include('Components.layout')
 @include('Components.Top_Bar')
-
-<body class="h-screen" style="background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(198,208,191,1) 0%);">
-
-    @include('Components.nav')
-    @include('Components.SearchBar')
+@include('Components.nav')
+@include('Components.SearchBar')
 
     <h2 class="w-full text-center text-3xl text-green-900 dark:text-white font-semibold">Gamme Hazel</h2>
 
@@ -105,5 +102,5 @@
             </div>
         </div>
     </div>
-</body>
+
 @include('Components.footer')
