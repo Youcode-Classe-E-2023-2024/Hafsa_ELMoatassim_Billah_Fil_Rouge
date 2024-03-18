@@ -131,7 +131,7 @@
         <div class="py-5">
             <details class="group">
                 <summary class="text-green-950 flex justify-between items-center font-medium cursor-pointer list-none">
-                    <span> 9. Can I use Hazel products if I have oily skin?</span>
+                    <span> 8. Can I use Hazel products if I have oily skin?</span>
                     <span class="transition group-open:rotate-180">
                         <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor"
                              stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path
@@ -145,6 +145,8 @@
                 </p>
             </details>
         </div>
+
+
     </div>
 </div>
 @include('Components.footer')
