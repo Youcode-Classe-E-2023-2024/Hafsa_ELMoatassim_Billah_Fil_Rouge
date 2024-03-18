@@ -28,3 +28,8 @@ Route::get('/Contact', function () {
     return view('Contact');
 });
 
+Route::get('/FAQ', function () {
+    return view('FAQ');
+});
+
+
