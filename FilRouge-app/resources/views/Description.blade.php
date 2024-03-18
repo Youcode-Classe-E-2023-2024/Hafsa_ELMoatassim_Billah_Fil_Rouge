@@ -33,6 +33,13 @@
             <p class="text-xl font-black text-gray-800">
                 $25 &nbsp <span class="text-red-800 line-through">30$</span>
             </p>
+            <div class="flex p-1 gap-1 text-orange-300">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half"></ion-icon>
+            </div>
             <div class="h-5"></div>
             <div class="flex">
                 <div class="flex flex-col custom-number-input h-10 w-32">

@@ -40,7 +40,8 @@
 <section class="my-20 px-10">
     <div class="flex my-5 justify-between px-5">
         <div>
-            <p class="text-3xl" style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">New Collection :</p>
+            <p class="text-3xl" style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">New
+                Collection :</p>
         </div>
         <div>
             <button type="button" class="text-green-950 rounded-full border border-green-950 py-2 px-6">
@@ -164,48 +165,131 @@
         </div>
     </div>
 </section>
-<div class="lg:w-4/5 px-10">
-    <p class="font-bold text-5xl mb-5 pl-5" style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">Benifits of using our products </p>
-    <p class="pl-5">Experience radiant beauty with our products, crafted to nourish, rejuvenate, <br> and enhance your skin's health.
-       Enjoy the benefits of glowing complexion, improved texture,<br> and a boost of confidence in every application</p>
-</div>
+<section>
+    <div class="lg:w-3/5 px-10">
+        <p class="font-bold text-5xl mb-5 pl-5"
+           style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">Benefits of using our
+            products </p>
+        <p class="pl-5">Experience radiant beauty with our products, crafted to nourish, rejuvenate, <br> and enhance
+            your skin's health.
+            Enjoy the benefits of glowing complexion, improved texture,<br> and a boost of confidence in every
+            application</p>
+    </div>
     <div class="container mx-auto mx-auto p-4">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3">
             <div class="rounded-lg p-4">
                 <div class="px-1 py-4">
-                    <div class="font-bold text-xl mb-2">100% Naturel</div>
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        100% Naturel
+                    </div>
                     <p class="text-gray-700 text-base">
                         your skin glows with vitality and health something beautiful to me</p>
                 </div>
                 <div class="px-1 py-4">
-                    <div class="font-bold text-xl mb-2">Healthy Skin</div>
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        Healthy Skin
+                    </div>
                     <p class="text-gray-700 text-base">
-                        Relax and rejuvenate with our Health-Skin cream use to ease </div>
+                        Relax and rejuvenate with our Health-Skin cream use to ease
+                </div>
+                <div class="px-1 py-4">
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        100% Naturel
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        your skin glows with vitality and health something beautiful to me</p>
+                </div>
+                <div class="px-1 py-4">
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        100% Naturel
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        your skin glows with vitality and health something beautiful to me</p>
+                </div>
             </div>
             <div class="rounded-lg p-4">
                 <div class="px-1 py-4">
-                    <div class="font-bold text-xl mb-2">No Side Effects</div>
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        No Side Effects
+                    </div>
                     <p class="text-gray-700 text-base">
                         Experience renewed confidence as your skin glows with vitality and healthy</p>
                 </div>
                 <div class="px-1 py-4">
-                    <div class="font-bold text-xl mb-2">Fastest Refreshment</div>
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        Fastest Refreshment
+                    </div>
                     <p class="text-gray-700 text-base">
                         The heat from the stones penatrates deep into the muscles to improve </p>
                 </div>
-            </div>
-            <div class="rounded-lg p-4">
                 <div class="px-1 py-4">
-                    <div class="font-bold text-xl mb-2">Blog Title</div>
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        100% Naturel
+                    </div>
                     <p class="text-gray-700 text-base">
-                        This is a simple blog card example using Tailwind CSS. You can replace this text with your own blog content.
-                    </p>
+                        your skin glows with vitality and health something beautiful to me</p>
                 </div>
                 <div class="px-1 py-4">
-                    <a href="#" class="text-blue-500 hover:underline">Read More</a>
+                    <div class="font-bold text-2xl mb-2"
+                         style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
+                        100% Naturel
+                    </div>
+                    <p class="text-gray-700 text-base">
+                        your skin glows with vitality and health something beautiful to me</p>
+                </div>
+            </div>
+
+            <div class="rounded-lg pb-15">
+                <img src="{{ asset('./assets/images/Benefit pic.png') }}"
+                     alt="Image"
+                     class="w-full  rounded-md object-cover">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="">
+    <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-2">
+            <div class="rounded-lg">
+                <img src="{{ asset('./assets/images/Benefit2.png') }}"
+                     alt="Image"
+                     class="ml-10 pl-10">
+            </div>
+            <div class="rounded-lg p-4 m-auto" style="padding-top: 1rem;">
+                <p class="font-bold text-5xl mb-5 pl-5"
+                   style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">What Our Client Says </p>
+                <p class="pl-5">I've struggled with acne-prone skin for years and l've tried countless products to try and clear it up.
+                    Nothing seemed to work until I found Hazelstore website l’ve struggled with acne-prone skin for years and l've tried
+                    countless products to try and clear it up. Nothing seemed to work until I found this skin care website l've struggled with
+                    acne-prone skin for years and I've tried countless products to try and clear it up. Nothing seemed to work until I found
+                    this skin care</p>
+                <div class="flex mt-5 pl-5">
+                    <div>
+                        <img src="{{ asset('./assets/images/ana.jpg') }}" class="rounded-full w-10 h-10"/>
+                    </div>
+                    <div class="ml-5">
+                        <p class="text-sm font-semibold">Hafas Elmoatassim Billah</p>
+                        <p class="text-sm">Graphic Designer</p>
+                        <div class="flex p-1 gap-1 text-orange-300">
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star"></ion-icon>
+                            <ion-icon name="star-half"></ion-icon>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+@include('Components.footer')
 
