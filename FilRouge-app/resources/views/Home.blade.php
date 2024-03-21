@@ -1,5 +1,36 @@
 @include('Components.layout')
 
+<div class="flex h-screen relative">
+    <div class="absolute inset-0 flex items-center justify-center"
+         style="font-family: 'Italiana', sans-serif; top: -25%;">
+        <h1 class="text-gray-900 pb-20" style="width: 100%; text-align: center; font-size: 16rem;">
+            SKINCARE</h1>
+    </div>
+    <div class="w-1/2 bg-gradient-to-b from-8EA67F to-white relative">
+        <div class="absolute bottom-20 flex flex-col items-center  justify-center">
+            <h1 class="w-3/5 text-gray-900 ">Welcome to our skincare haven, where beauty meets science. Explore our
+                curated collection of premium products designed to pamper and transform your skin. From
+                indulgent face serums to masks, discover the perfect regimen for
+                a radiant and confident you</h1>
+            <button class="shadow-lg mt-7 mb-9 text-gray-200 px-4 py-2 rounded" style="background-color: #8EA67F;">Shop
+                Now
+            </button>
+        </div>
+    </div>
+    <div class="w-1/2 " style="background-color: #8EA67F;"></div>
+    <div class="absolute inset-x-0 bottom-0">
+        <div class="w-full h-20 flex justify-evenly" style="background-color: #AAB9A1">
+            <img src="{{ asset('./assets/images/paraben free.png') }}" class="p-3" alt="">
+            <img src="{{ asset('./assets/images/perfum free.png') }}" class="p-3" alt="">
+            <img src="{{ asset('./assets/images/silicon free.png') }}" class="p-3" alt="">
+            <img src="{{ asset('./assets/images/sulfat free.png') }}" class="p-3" alt="">
+        </div>
+    </div>
+    <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-5"
+         alt="Your Image">
+</div>
+
+
 <!-- Blogs & Tips -->
 <div class="mb-10 mt-10 flex-col text-green-950 text-center justify-center items-center"
      style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">
@@ -246,10 +277,10 @@
                 </div>
             </div>
 
-            <div class="rounded-lg pb-15">
+            <div class="bg-gray-300 rounded-t-full pb-15">
                 <img src="{{ asset('./assets/images/Benefit pic.png') }}"
                      alt="Image"
-                     class="w-full  rounded-md object-cover">
+                     class="w-full rounded-md object-cover">
             </div>
         </div>
     </div>
@@ -261,15 +292,20 @@
             <div class="rounded-lg">
                 <img src="{{ asset('./assets/images/Benefit2.png') }}"
                      alt="Image"
-                     class="ml-10 pl-10">
+                     class="">
             </div>
             <div class="rounded-lg p-4 m-auto" style="padding-top: 1rem;">
                 <p class="font-bold text-5xl mb-5 pl-5"
-                   style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">What Our Client Says </p>
-                <p class="pl-5">I've struggled with acne-prone skin for years and l've tried countless products to try and clear it up.
-                    Nothing seemed to work until I found Hazelstore website l’ve struggled with acne-prone skin for years and l've tried
-                    countless products to try and clear it up. Nothing seemed to work until I found this skin care website l've struggled with
-                    acne-prone skin for years and I've tried countless products to try and clear it up. Nothing seemed to work until I found
+                   style="font-family: 'Italiana', sans-serif; font-weight: 400; font-style: normal;">What Our Client
+                    Says </p>
+                <p class="pl-5">I've struggled with acne-prone skin for years and l've tried countless products to try
+                    and clear it up.
+                    Nothing seemed to work until I found Hazelstore website l’ve struggled with acne-prone skin for
+                    years and l've tried
+                    countless products to try and clear it up. Nothing seemed to work until I found this skin care
+                    website l've struggled with
+                    acne-prone skin for years and I've tried countless products to try and clear it up. Nothing seemed
+                    to work until I found
                     this skin care</p>
                 <div class="flex mt-5 pl-5">
                     <div>
