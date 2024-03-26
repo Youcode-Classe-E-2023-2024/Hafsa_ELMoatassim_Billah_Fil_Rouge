@@ -19,15 +19,16 @@
             </button>
         </div>
     </div>
-
-    <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
-        <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
-        <a href="#" class="no-underline text-black hover:text-green-800 px-4 py-2">About</a>
-        <img src="{{ asset('./assets/images/Logo.png') }}" alt="logo">
-        <a href="/All_products" class="no-underline text-black hover:text-green-800 px-4 py-2">Products</a>
-        <a href="/Contact" class="no-underline text-black hover:text-green-800 px-4 py-2">Contact</a>
+    <div class="flex">
+        <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
+            <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
+            <a href="#" class="no-underline text-black hover:text-green-800 px-4 py-2">About</a>
+            <img src="{{ asset('./assets/images/Logo.png') }}" alt="logo">
+            <a href="/All_products" class="no-underline text-black hover:text-green-800 px-4 py-2">Products</a>
+            <a href="/Contact" class="no-underline text-black hover:text-green-800 px-4 py-2">Contact</a>
+            <a href="/login" class="no-underline text-black hover:text-green-800 px-4 py-2">Login</a>
+        </div>
     </div>
-
     <div class="w-1/2 h-full" style="background-color: #8EA67F;">
         <div class="max-w-screen-md md:w-3/6 mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-center h-full px-2 rounded-xl"

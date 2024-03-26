@@ -32,8 +32,10 @@ Route::get('/FAQ', function () {
     return view('FAQ');
 });
 
-Route::get('/dashboard', function () {
-    return view('Admin.Dashboard');
-});
+//Route::get('/dashboard', function () {
+//    return view('Admin.Dashboard');
+//});
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
+
 
 
