@@ -194,13 +194,13 @@
             </header>
             <main class="flex-1 overflow-x-hidden overflow-y-auto" style="background-color: #d4e6c8;">
                 <div class="container px-6 py-8 mx-auto">
-                    <h3 class="text-3xl font-medium text-gray-700">Dashboard</h3>
+                    <h3 class="text-3xl font-medium text-green-900">Dashboard</h3>
 
                     <div class="mt-4">
                         <div class="flex flex-wrap -mx-6">
                             <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
                                 <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
-                                    <div class="p-3 bg-green-600 bg-opacity-75 rounded-full">
+                                    <div class="p-3 bg-green-900 bg-opacity-75 rounded-full">
                                         <svg class="w-8 h-8 text-white" viewBox="0 0 28 30" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -233,7 +233,7 @@
 
                             <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
                                 <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
-                                    <div class="p-3 bg-green-600 bg-opacity-75 rounded-full">
+                                    <div class="p-3 bg-green-900 bg-opacity-75 rounded-full">
                                         <svg class="w-8 h-8 text-white" viewBox="0 0 28 28" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path
@@ -257,7 +257,7 @@
 
                             <div class="w-full px-6 mt-6 sm:w-1/2 xl:w-1/3 xl:mt-0">
                                 <div class="flex items-center px-5 py-6 bg-white rounded-md shadow-sm">
-                                    <div class="p-3 bg-green-800 bg-opacity-75 rounded-full">
+                                    <div class="p-3 bg-green-900 bg-opacity-75 rounded-full">
                                         <svg class="w-8 h-8 text-white" viewBox="0 0 28 28" fill="none"
                                              xmlns="http://www.w3.org/2000/svg">
                                             <path d="M6.99998 11.2H21L22.4 23.8H5.59998L6.99998 11.2Z"
