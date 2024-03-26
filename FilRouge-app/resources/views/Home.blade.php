@@ -13,11 +13,13 @@
                 indulgent face serums to masks, discover the perfect regimen for
                 a radiant and confident you
             </h1>
-            <button class="shadow-lg mt-7 mb-9 text-gray-200 px-4 py-2 rounded" style="background-color: #78876d; box-shadow: 5px 5px 5px gray;">
+            <button class="shadow-lg mt-7 mb-9 text-gray-200 px-4 py-2 rounded"
+                    style="background-color: #78876d; box-shadow: 5px 5px 5px gray;">
                 <a href="/All_products" style="text-decoration: none; color: inherit; display: block;">Shop Now</a>
             </button>
         </div>
     </div>
+
     <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
         <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
         <a href="#" class="no-underline text-black hover:text-green-800 px-4 py-2">About</a>
@@ -25,14 +27,18 @@
         <a href="/All_products" class="no-underline text-black hover:text-green-800 px-4 py-2">Products</a>
         <a href="/Contact" class="no-underline text-black hover:text-green-800 px-4 py-2">Contact</a>
     </div>
+
     <div class="w-1/2 h-full" style="background-color: #8EA67F;">
         <div class="max-w-screen-md md:w-3/6 mx-auto">
-            <div class="flex flex-col md:flex-row items-center justify-center h-full px-2 rounded-xl" style="margin-top: 22rem; background-color:#6c8060">
+            <div class="flex flex-col md:flex-row items-center justify-center h-full px-2 rounded-xl"
+                 style="margin-top: 22rem; background-color:#6c8060">
                 <div class="w-auto md:w-1/2 py-2">
-                    <img class="w-full h-auto rounded-lg" src="{{ asset('./assets/images/Rectangle 46.png') }}" alt="Image" />
+                    <img class="w-full h-auto rounded-lg" src="{{ asset('./assets/images/Rectangle 46.png') }}"
+                         alt="Image"/>
                 </div>
                 <div class="w-full md:w-3/4 py-2">
-                    <p class="w-full px-2 text-sm tracking-wide leading-tight text-white">Face serum infused with the goodness of argan oil for a radiant and youthful complexion.
+                    <p class="w-full px-2 text-sm tracking-wide leading-tight text-white">Face serum infused with the
+                        goodness of argan oil for a radiant and youthful complexion.
                         <br> 25$</p>
                     <div class="flex p-1 gap-1 text-orange-300">
                         <ion-icon name="star"></ion-icon>
@@ -47,7 +53,6 @@
     </div>
 
 
-
     <div class="absolute inset-x-0 bottom-0">
         <div class="w-full h-20 flex justify-evenly" style="background-color: #AAB9A1">
             <img src="{{ asset('./assets/images/paraben free.png') }}" class="p-3" alt="">
@@ -59,7 +64,6 @@
     <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-12"
          alt="Your Image">
 </section>
-
 
 
 <!-- Blogs & Tips -->
@@ -106,16 +110,19 @@
                 Collection :</p>
         </div>
         <div>
-            <button type="button" class="text-green-950 rounded-full border border-green-950 py-2 px-6">
-                <div class="flex flex-row align-middle">
-                    <span>All Collection</span>
-                    <svg class="w-5 ml-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                              d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                </div>
-            </button>
+            <a href="/All_products">
+                <button type="button" class="text-green-950 rounded-full border border-green-950 py-2 px-6">
+                    <div class="flex flex-row align-middle">
+                        <span>All Collection</span>
+                        <svg class="w-5 ml-2" fill="currentColor" viewBox="0 0 20 20"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                  d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </button>
+            </a>
         </div>
     </div>
     <div class="px-4">
@@ -127,7 +134,7 @@
                     <div class="p-4 h-auto md:h-40 lg:h-48">
                         <div class="flex">
                             <a href="/Description"
-                               class="block text-gray-800 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
+                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
                                 Face Cream
                             </a>
                             <p class="ml-auto font-black text-gray-800">
@@ -140,7 +147,7 @@
                         </div>
                         <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Light
+                            Shop Now
                         </button>
 
                     </div>
@@ -153,7 +160,7 @@
                     <div class="p-4 h-auto md:h-40 lg:h-48">
                         <div class="flex">
                             <a href="/Description"
-                               class="block text-gray-800 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
+                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
                                 Face Cream
                             </a>
                             <p class="ml-auto font-black text-gray-800">
@@ -166,7 +173,7 @@
                         </div>
                         <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Light
+                            Shop Now
                         </button>
 
                     </div>
@@ -179,7 +186,7 @@
                     <div class="p-4 h-auto md:h-40 lg:h-48">
                         <div class="flex">
                             <a href="/Description"
-                               class="block text-gray-800 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
+                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
                                 Face Cream
                             </a>
                             <p class="ml-auto font-black text-gray-800">
@@ -192,7 +199,7 @@
                         </div>
                         <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Light
+                            Shop Now
                         </button>
 
                     </div>
@@ -205,7 +212,7 @@
                     <div class="p-4 h-auto md:h-40 lg:h-48">
                         <div class="flex">
                             <a href="/Description"
-                               class="block text-gray-800 hover:text-blue-600 font-semibold mb-2 text-lg md:text-base lg:text-lg">
+                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
                                 Face Cream
                             </a>
                             <p class="ml-auto font-black text-gray-800">
@@ -218,7 +225,7 @@
                         </div>
                         <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Light
+                            Shop Now
                         </button>
 
                     </div>
