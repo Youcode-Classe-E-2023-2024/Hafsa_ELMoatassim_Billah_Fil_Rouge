@@ -3,7 +3,7 @@
 <section class="flex h-screen relative">
     <div class="absolute inset-0 flex items-center justify-center"
          style="font-family: 'Italiana', sans-serif; top: -25%;">
-        <h1 class="text-gray-900 pb-20" style="width: 100%; text-align: center; font-size: 16rem;">
+        <h1 class="text-gray-800 pb-20" style="width: 100%; text-align: center; font-size: 16rem;">
             SKINCARE</h1>
     </div>
     <div class="w-1/2 bg-gradient-to-b from-8EA67F to-white relative">
@@ -11,20 +11,43 @@
             <h1 class="w-3/5 text-gray-900">Welcome to our skincare haven, where beauty meets science. Explore our
                 curated collection of premium products designed to pamper and transform your skin. From
                 indulgent face serums to masks, discover the perfect regimen for
-                a radiant and confident you</h1>
-            <button class="shadow-lg mt-7 mb-9 text-gray-200 px-4 py-2 rounded" style="background-color: #8EA67F;">Shop
-                Now
+                a radiant and confident you
+            </h1>
+            <button class="shadow-lg mt-7 mb-9 text-gray-200 px-4 py-2 rounded" style="background-color: #78876d; box-shadow: 5px 5px 5px gray;">
+                <a href="/All_products" style="text-decoration: none; color: inherit; display: block;">Shop Now</a>
             </button>
         </div>
     </div>
     <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
-        <a href="/" class="text-black px-4 py-2">Home</a>
-        <a href="#" class="text-black px-4 py-2">About</a>
+        <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
+        <a href="#" class="no-underline text-black hover:text-green-800 px-4 py-2">About</a>
         <img src="{{ asset('./assets/images/Logo.png') }}" alt="logo">
-        <a href="/All_products" class="text-black px-4 py-2">Products</a>
-        <a href="/Contact" class="text-black px-4 py-2">Contact</a>
+        <a href="/All_products" class="no-underline text-black hover:text-green-800 px-4 py-2">Products</a>
+        <a href="/Contact" class="no-underline text-black hover:text-green-800 px-4 py-2">Contact</a>
     </div>
-    <div class="w-1/2 " style="background-color: #8EA67F;"></div>
+    <div class="w-1/2 h-full" style="background-color: #8EA67F;">
+        <div class="max-w-screen-md md:w-3/6 mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-center h-full px-2 rounded-xl" style="margin-top: 22rem; background-color:#6c8060">
+                <div class="w-auto md:w-1/2 py-2">
+                    <img class="w-full h-auto rounded-lg" src="{{ asset('./assets/images/Rectangle 46.png') }}" alt="Image" />
+                </div>
+                <div class="w-full md:w-3/4 py-2">
+                    <p class="w-full px-2 text-sm tracking-wide leading-tight text-white">Face serum infused with the goodness of argan oil for a radiant and youthful complexion.
+                        <br> 25$</p>
+                    <div class="flex p-1 gap-1 text-orange-300">
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star"></ion-icon>
+                        <ion-icon name="star-half"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="absolute inset-x-0 bottom-0">
         <div class="w-full h-20 flex justify-evenly" style="background-color: #AAB9A1">
             <img src="{{ asset('./assets/images/paraben free.png') }}" class="p-3" alt="">
@@ -36,7 +59,6 @@
     <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-12"
          alt="Your Image">
 </section>
-
 
 
 
