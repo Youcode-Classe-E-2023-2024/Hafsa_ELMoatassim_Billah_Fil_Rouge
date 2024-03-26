@@ -1,14 +1,14 @@
 @include('Components.layout')
 
-<div class="flex h-screen relative">
+<section class="flex h-screen relative">
     <div class="absolute inset-0 flex items-center justify-center"
          style="font-family: 'Italiana', sans-serif; top: -25%;">
         <h1 class="text-gray-900 pb-20" style="width: 100%; text-align: center; font-size: 16rem;">
             SKINCARE</h1>
     </div>
     <div class="w-1/2 bg-gradient-to-b from-8EA67F to-white relative">
-        <div class="absolute bottom-20 flex flex-col items-center  justify-center">
-            <h1 class="w-3/5 text-gray-900 ">Welcome to our skincare haven, where beauty meets science. Explore our
+        <div class="absolute bottom-20 flex flex-col items-center justify-center">
+            <h1 class="w-3/5 text-gray-900">Welcome to our skincare haven, where beauty meets science. Explore our
                 curated collection of premium products designed to pamper and transform your skin. From
                 indulgent face serums to masks, discover the perfect regimen for
                 a radiant and confident you</h1>
@@ -16,6 +16,13 @@
                 Now
             </button>
         </div>
+    </div>
+    <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
+        <a href="/" class="text-black px-4 py-2">Home</a>
+        <a href="#" class="text-black px-4 py-2">About</a>
+        <img src="{{ asset('./assets/images/Logo.png') }}" alt="logo">
+        <a href="/All_products" class="text-black px-4 py-2">Products</a>
+        <a href="/Contact" class="text-black px-4 py-2">Contact</a>
     </div>
     <div class="w-1/2 " style="background-color: #8EA67F;"></div>
     <div class="absolute inset-x-0 bottom-0">
@@ -26,9 +33,11 @@
             <img src="{{ asset('./assets/images/sulfat free.png') }}" class="p-3" alt="">
         </div>
     </div>
-    <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-5"
+    <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-12"
          alt="Your Image">
-</div>
+</section>
+
+
 
 
 <!-- Blogs & Tips -->
