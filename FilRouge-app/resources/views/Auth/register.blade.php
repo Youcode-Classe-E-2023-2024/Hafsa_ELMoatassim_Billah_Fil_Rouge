@@ -1,4 +1,4 @@
-@include('Components.layout')
+@include('Partials.layout')
 
 <div class="bg-no-repeat bg-cover bg-center relative"
      style="background-image: url(https://images.pexels.com/photos/6713501/pexels-photo-6713501.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
@@ -21,20 +21,22 @@
                 <div class="mb-4">
                     <h3 class="text-center font-semibold text-2xl text-gray-800">Regsiter </h3>
                 </div>
-                <div class="space-y-5">
-
+                <form action="/register"
+                      method="POST">
+                    @csrf
+                 <div class="space-y-5">
                     <div>
                         <label class="text-sm font-medium text-gray-700 tracking-wide">Name</label>
                         <input
-                                class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                                type="text" placeholder="Name">
+                            class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                            type="text" name="name" placeholder="Name">
                     </div>
 
                     <div>
                         <label class="text-sm font-medium text-gray-700 tracking-wide">Email</label>
                         <input
-                                class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                                type="email" placeholder="mail@gmail.com">
+                            class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                            type="email" name="email" placeholder="mail@gmail.com">
                     </div>
 
                     <div>
@@ -42,8 +44,8 @@
                             Password
                         </label>
                         <input
-                                class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                                type="password" placeholder="Enter your password">
+                            class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                            type="password" name="password" placeholder="Enter your password">
                     </div>
 
                     <div class="flex items-center justify-between">
@@ -73,7 +75,7 @@
                         </a>
                     </div>
                 </div>
-
+                </form>
             </div>
         </div>
     </div>

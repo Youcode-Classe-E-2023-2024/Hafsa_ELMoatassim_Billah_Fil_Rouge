@@ -1,5 +1,5 @@
-@include('Components.layout')
-@include('Components.Top_Bar')
+@include('Partials.layout')
+@include('Partials.Top_Bar')
 <style>
     input[type='number']::-webkit-inner-spin-button,
     input[type='number']::-webkit-outer-spin-button {
@@ -16,13 +16,13 @@
     }
 </style>
 
-@include('Components.nav')
-{{--@include('Components.SearchBar')--}}
+@include('Partials.nav')
+{{--@include('Partials.SearchBar')--}}
 
 
 <div class="flex flex-col justify-center my-20">
     <div
-        class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-3xl mx-auto">
+            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-3xl mx-auto">
         <div class="w-full grid place-items-center">
             <img src="{{ asset('./assets/images/Rectangle 46.png') }}" alt="tailwind logo"
                  class="shadow-lg rounded-xl"/>
@@ -73,7 +73,7 @@
 </div>
 
 <div class="max-w-4xl text-center m-auto px-10  py-6 rounded-lg shadow-md">
-        <p class="text-gray-600">
+    <p class="text-gray-600">
         Discover our Green Tea Cleansing Gel, a deep cleansing solution that preserves your skin's natural hydration.
         Designed to provide a gentle and effective experience, this gel contains carefully selected natural ingredients,
         such as Camelia Sinensis extract with hydrating, anti-inflammatory and anti-aging properties, as well as
@@ -93,7 +93,7 @@
         problems. For radiant and healthy skin, adopt Hazel Green Tea Cleansing Gel</p>
 </div>
 
-@include('Components.footer')
+@include('Partials.footer')
 
 <script>
     function decrement(e) {

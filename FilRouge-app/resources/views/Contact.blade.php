@@ -1,7 +1,7 @@
-@include('Components.layout')
-@include('Components.Top_Bar')
-@include('Components.nav')
-@include('Components.SearchBar')
+@include('Partials.layout')
+@include('Partials.Top_Bar')
+@include('Partials.nav')
+@include('Partials.SearchBar')
 
 
 {{--<div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">--}}
@@ -11,52 +11,52 @@
 
 
 <div class="mx-auto max-w-2xl text-center">
-            <h2 class="text-3xl font-bold tracking-tight text-green-950 sm:text-4xl">Contact</h2>
+    <h2 class="text-3xl font-bold tracking-tight text-green-950 sm:text-4xl">Contact</h2>
+</div>
+
+<form action="#" method="POST" class="mx-auto max-w-xl mt-10">
+    <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div>
+            <div class="mt-2.5">
+                <input type="text" name="first-name" id="first-name" placeholder="First Name" autocomplete="given-name"
+                       class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
+            </div>
         </div>
 
-        <form action="#" method="POST" class="mx-auto max-w-xl mt-10">
-            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
-                <div>
-                    <div class="mt-2.5">
-                        <input type="text" name="first-name" id="first-name" placeholder="First Name" autocomplete="given-name"
-                               class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
+        <div>
+            <div class="mt-2.5">
+                <input type="text" name="last-name" id="last-name" placeholder="Last Name" autocomplete="given-name"
+                       class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
+            </div>
+        </div>
 
-                <div>
-                    <div class="mt-2.5">
-                        <input type="text" name="last-name" id="last-name" placeholder="Last Name" autocomplete="given-name"
-                               class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
+        <div class="sm:col-span-2">
+            <div class="mt-2.5">
+                <input type="email" name="email" id="email" placeholder="Email" autocomplete="email"
+                       class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
+            </div>
+        </div>
 
-                <div class="sm:col-span-2">
-                    <div class="mt-2.5">
-                        <input type="email" name="email" id="email" placeholder="Email" autocomplete="email"
-                               class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
-                    </div>
-                </div>
+        <div class="sm:col-span-2">
+            <input type="tel" name="phone-number" id="phone-number" placeholder="Phone Number" autocomplete="tel"
+                   class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
+        </div>
 
-                <div class="sm:col-span-2">
-                    <input type="tel" name="phone-number" id="phone-number" placeholder="Phone Number" autocomplete="tel"
-                           class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
-                </div>
-
-                <div class="sm:col-span-2">
-                    <div class="mt-2.5">
+        <div class="sm:col-span-2">
+            <div class="mt-2.5">
                         <textarea name="message" id="message" placeholder="Message" rows="4"
                                   class="bg-transparent block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm shadow-green-500 ring-1 ring-inset ring-green-800 placeholder:text-gray-600 focus:green-400 sm:text-sm sm:leading-6">
                         </textarea>
-                    </div>
-                </div>
             </div>
-
-            <div class="mt-10">
-                <button type="submit"
-                        class="block w-full rounded-md bg-green-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                    Let's talk
-                </button>
-            </div>
-        </form>
         </div>
-@include('Components.footer')
+    </div>
+
+    <div class="mt-10">
+        <button type="submit"
+                class="block w-full rounded-md bg-green-900 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Let's talk
+        </button>
+    </div>
+</form>
+</div>
+@include('Partials.footer')

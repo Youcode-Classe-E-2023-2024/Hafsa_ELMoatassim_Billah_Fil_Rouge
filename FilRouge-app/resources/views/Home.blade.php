@@ -1,4 +1,4 @@
-@include('Components.layout')
+@include('Partials.layout')
 
 <section class="flex h-screen relative">
     <div class="absolute inset-0 flex items-center justify-center"
@@ -78,29 +78,29 @@
 <div class="flex gap-5 justify-center items-center">
     <div class="w-36 h-65">
         <img
-            class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
+                class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
 
-            src="{{ asset('./assets/images/pic1.png') }}" alt=""/>
+                src="{{ asset('./assets/images/pic1.png') }}" alt=""/>
     </div>
     <div class="w-60 h-70">
         <img
-            class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
-            src="{{ asset('./assets/images/pic2.png') }}" alt=""/>
+                class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
+                src="{{ asset('./assets/images/pic2.png') }}" alt=""/>
     </div>
     <div class="w-80 h-90">
         <img
-            class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full object-cover rounded-t-full"
-            src="{{ asset('./assets/images/pic5.png') }}" alt=""/>
+                class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full object-cover rounded-t-full"
+                src="{{ asset('./assets/images/pic5.png') }}" alt=""/>
     </div>
     <div class="w-60 h-70">
         <img
-            class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
-            src="{{ asset('./assets/images/pic3.png') }}" alt=""/>
+                class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
+                src="{{ asset('./assets/images/pic3.png') }}" alt=""/>
     </div>
     <div class="w-36 h-65">
         <img
-            class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
-            src="{{ asset('./assets/images/pic4.png') }}" alt=""/>
+                class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
+                src="{{ asset('./assets/images/pic4.png') }}" alt=""/>
     </div>
 </div>
 
@@ -366,5 +366,5 @@
         </div>
     </div>
 </section>
-@include('Components.footer')
+@include('Partials.footer')
 

@@ -1,4 +1,4 @@
-@include('Components.layout')
+@include('Partials.layout')
 
 <div class="pt-5 w-full text-xs flex justify-around items-center">
     <div class="flex">
@@ -24,7 +24,8 @@
 <nav id="bar" class="flex justify-center ">
     <div class="sm:mb-0 self-center">
         <a href="/" class="text-md no-underline text-black hover:text-green-800 ml-2 px-1">Home</a>
-        <a href="/All_products" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">Products</a>
+        <a href="/All_products"
+           class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">Products</a>
         <a href="/Contact" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">Contact Us</a>
         <a href="/FAQ" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">FAQ</a>
         <a href="#" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">About Us</a>

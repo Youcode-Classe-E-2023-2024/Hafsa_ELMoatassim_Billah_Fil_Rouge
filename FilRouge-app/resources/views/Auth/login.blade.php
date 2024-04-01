@@ -1,4 +1,4 @@
-@include('Components.layout')
+@include('Partials.layout')
 
 <div class="bg-no-repeat bg-cover bg-center relative"
      style="background-image: url(https://images.pexels.com/photos/247599/pexels-photo-247599.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
