@@ -1,40 +1,80 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
     /**
-     * Handle an authentication attempt.
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-
-    public function show(){
-        return view('login.show');
-    }
-    public function login(Request $request){
-        $values = $request->post();
-        dd($request);
+    public function login()
+    {
+        return view('Auth.Login');
     }
 
-//    public function authenticate(Request $request): RedirectResponse
-//    {
-//        $credentials = $request->validate([
-//            'email' => ['required', 'email'],
-//            'password' => ['required'],
-//        ]);
-//
-//        if (Auth::attempt($credentials)) {
-//            $request->session()->regenerate();
-//
-//            return redirect()->intended('dashboard');
-//        }
-//
-//        return back()->withErrors([
-//            'email' => 'The provided credentials do not match our records.',
-//        ])->onlyInput('email');
-//    }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+
+            $user = User::find(Auth::id());
+            if($user->role("admin")) return redirect()->intended('/dashboard');
+            else return redirect()->intended('/');
+            return redirect('/');
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 }
