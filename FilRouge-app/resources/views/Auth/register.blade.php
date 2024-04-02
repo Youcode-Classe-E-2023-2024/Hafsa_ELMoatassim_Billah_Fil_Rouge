@@ -57,21 +57,6 @@
                              type="password" name="password_confirmation" placeholder="Enter your password">
                      </div>
 
-
-                     {{--                    <div class="flex items-center justify-between">--}}
-{{--                        <div class="flex items-center">--}}
-{{--                            <input id="remember_me" name="remember_me" type="checkbox"--}}
-{{--                                   class="h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded">--}}
-{{--                            <label for="remember_me" class="ml-2 block text-sm text-gray-800">--}}
-{{--                                Remember me--}}
-{{--                            </label>--}}
-{{--                        </div>--}}
-{{--                        <div class="text-sm">--}}
-{{--                            <a href="#" class="text-green-800 hover:text-green-500">--}}
-{{--                                Forgot your password?--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
                     <div>
                         <button type="submit"
                                 class="w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3 rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">

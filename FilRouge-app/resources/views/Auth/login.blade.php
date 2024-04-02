@@ -22,21 +22,23 @@
                     <h3 class="font-semibold text-2xl text-gray-800">Sign In </h3>
                     <p class="text-gray-500">Please sign in to your account.</p>
                 </div>
-                <div class="space-y-5">
+                <form action="/login" method="POST">
+                    @csrf
+                 <div class="space-y-5">
                     <div class="space-y-2">
                         <label class="text-sm font-medium text-gray-700 tracking-wide">Email</label>
-                        <input
-                                class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                                type="" placeholder="mail@gmail.com">
+                        <input class=" w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                                type="email" name="email" placeholder="mail@gmail.com">
                     </div>
+
                     <div class="space-y-2">
                         <label class="mb-5 text-sm font-medium text-gray-700 tracking-wide">
                             Password
                         </label>
-                        <input
-                                class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
-                                type="" placeholder="Enter your password">
+                        <input class="w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400"
+                                type="password" name="password" placeholder="Enter your password">
                     </div>
+
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
                             <input id="remember_me" name="remember_me" type="checkbox"
@@ -57,14 +59,14 @@
                             Login
                         </button>
                         <a href="/register">
-                            <button type="submit"
+                            <button type="button"
                                     class="mt-5 w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                                 Register
                             </button>
                         </a>
                     </div>
                 </div>
-
+                </form>
             </div>
         </div>
     </div>
