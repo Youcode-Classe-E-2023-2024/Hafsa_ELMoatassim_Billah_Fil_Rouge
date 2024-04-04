@@ -48,7 +48,7 @@
                             </label>
                         </div>
                         <div class="text-sm">
-                            <a href="#" class="text-green-900 hover:text-green-500">
+                            <a href="{{route('forgot-password')}}" class="text-green-900 hover:text-green-500">
                                 Forgot your password?
                             </a>
                         </div>
