@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordLinkController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,8 +25,13 @@ Route::get('/Contact', function ()
 Route::get('/FAQ', function ()
 {return view('FAQ');});
 
-Route::get('/dashboard', function ()
-{return view('Admin.Dashboard');});
+Route::get('/Dash_Product', function ()
+{return view('Admin.Dash_Product');});
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::delete('/dashboard/{user}', [DashboardController::class, 'banUser'])->name('ban.user');
+Route::patch('/dashboard/recover/{user}', [DashboardController::class, 'recoverUser'])->name('recover.user');
+
 
 
 Route::get('/login', [LoginController::class,'login']);
