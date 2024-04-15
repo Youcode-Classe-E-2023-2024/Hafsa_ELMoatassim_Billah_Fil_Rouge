@@ -36,12 +36,16 @@ Route::delete('/dashboard/{user}', [DashboardController::class, 'banUser'])->nam
 Route::patch('/dashboard/recover/{user}', [DashboardController::class, 'recoverUser'])->name('recover.user');
 
 // Product routes
-Route::post('/dashboard/add-product', [ProductController::class, 'addProduct'])->name('add.product');
+Route::post('/Admin/Dash_Product', [ProductController::class, 'addProduct'])->name('Admin.Dash_Product');
+Route::get('/Admin/Dash_Product', [ProductController::class, 'showProducts'])->name('Admin.Dash_Product');
+
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
 Route::get('/Dash_Product', [CategoryController::class, 'showCategories'])->name('show.categories');
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('delete.category');
+Route::get('/Admin/Dash_Product', [CategoryController::class, 'showCategories'])->name('show.categories');
+
 
 
 Route::get('/login', [LoginController::class,'login']);

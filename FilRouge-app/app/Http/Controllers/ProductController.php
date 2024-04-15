@@ -12,11 +12,11 @@ class ProductController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'price' => 'required',
+            'price' => 'required|numeric',
             'product_nbr' => 'required',
             'description' => 'required',
-            'image' => 'required',
-            'category' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category' => 'required|exists:categories,id',
         ]);
 
         $product = new Product();
@@ -28,9 +28,16 @@ class ProductController extends Controller
         $product->category = $request->category;
         $product->save();
 
-        return redirect()->route('Admin.dashboard')->with('success', 'Product added successfully.');
+        return redirect()->route('Admin.Dash_Product')->with('success', 'Product added successfully.');
     }
 
+    public function showProducts()
+    {
+
+        $products = Product::all();
+
+        return view('Admin.Dash_Product', ['products' => $products]);
+    }
 
 
 

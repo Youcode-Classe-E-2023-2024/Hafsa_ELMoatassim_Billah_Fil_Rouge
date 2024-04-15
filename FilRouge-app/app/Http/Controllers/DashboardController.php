@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -12,8 +13,8 @@ class DashboardController extends Controller
         $bannedUsers = User::where('deleted', 1)->get();
         $activeUsers = User::where('deleted', 0)->get();
         $totalUsers = User::count();
-
-        return view('Admin.dashboard', ['bannedUsers' => $bannedUsers, 'activeUsers' => $activeUsers, 'totalUsers' => $totalUsers]);
+        $totalProducts = Product::count();
+        return view('Admin.dashboard', ['bannedUsers' => $bannedUsers, 'activeUsers' => $activeUsers, 'totalUsers' => $totalUsers, 'totalProducts' => $totalProducts ]);
     }
 
     public function banUser(User $user)
