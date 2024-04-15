@@ -1,14 +1,14 @@
 @include('Partials.layout')
 
-<section class="flex h-screen relative">
+<section class="flex h-screen relative section1">
     <div class="absolute inset-0 flex items-center justify-center"
          style="font-family: 'Italiana', sans-serif; top: -25%;">
-        <h1 class="text-gray-800 pb-20" style="width: 100%; text-align: center; font-size: 16rem;">
-            SKINCARE</h1>
+        <h1 class="title text-gray-800 pb-20">SKINCARE</h1>
     </div>
+
     <div class="w-1/2 bg-gradient-to-b from-8EA67F to-white relative">
-        <div class="absolute bottom-20 flex flex-col items-center justify-center">
-            <h1 class="w-3/5 text-gray-900">Welcome to our skincare haven, where beauty meets science. Explore our
+        <div class="absolute pl-20 hidden lg:block bottom-20 flex flex-col items-center justify-center">
+            <h1 class="w-4/5 text-gray-900">Welcome to our skincare haven, where beauty meets science. Explore our
                 curated collection of premium products designed to pamper and transform your skin. From
                 indulgent face serums to masks, discover the perfect regimen for
                 a radiant and confident you
@@ -19,6 +19,7 @@
             </button>
         </div>
     </div>
+
     <div class="flex">
         <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
             <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
@@ -29,7 +30,8 @@
             <a href="/login" class="no-underline text-black hover:text-green-800 px-4 py-2">Login</a>
         </div>
     </div>
-    <div class="w-1/2 h-full" style="background-color: #8EA67F;">
+
+    <div class="w-1/2 h-full hidden lg:block" style="background-color: #8EA67F;">
         <div class="max-w-screen-md md:w-3/6 mx-auto">
             <div class="flex flex-col md:flex-row items-center justify-center h-full px-2 rounded-xl"
                  style="margin-top: 22rem; background-color:#6c8060">
@@ -52,7 +54,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="absolute inset-x-0 bottom-0">
         <div class="w-full h-20 flex justify-evenly" style="background-color: #AAB9A1">
@@ -146,11 +147,11 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quidem blanditiis unde
                             asperiores?
                         </div>
-                        <button type="button"
+                        <a href="/Description"> <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                             Shop Now
                         </button>
-
+                        </a>
                     </div>
                 </div>
             </div>
