@@ -4,8 +4,10 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordLinkController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,13 +27,21 @@ Route::get('/Contact', function ()
 Route::get('/FAQ', function ()
 {return view('FAQ');});
 
-Route::get('/Dash_Product', function ()
-{return view('Admin.Dash_Product');});
 
-Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+// Dashboard routes
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// User management routes
 Route::delete('/dashboard/{user}', [DashboardController::class, 'banUser'])->name('ban.user');
 Route::patch('/dashboard/recover/{user}', [DashboardController::class, 'recoverUser'])->name('recover.user');
 
+// Product routes
+Route::post('/dashboard/add-product', [ProductController::class, 'addProduct'])->name('add.product');
+
+// Category routes
+Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
+Route::get('/Dash_Product', [CategoryController::class, 'showCategories'])->name('show.categories');
+Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('delete.category');
 
 
 Route::get('/login', [LoginController::class,'login']);
