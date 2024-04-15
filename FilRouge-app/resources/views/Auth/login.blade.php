@@ -58,12 +58,12 @@
                                 class="w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                             Login
                         </button>
-                        <a href="/register">
+
                             <button type="button"
                                     class="mt-5 w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
-                                Register
+                                <a href="/register"> Register </a>
                             </button>
-                        </a>
+
                     </div>
                 </div>
                 </form>
