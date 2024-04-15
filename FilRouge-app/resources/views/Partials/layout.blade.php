@@ -11,6 +11,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
 </head>
+<style>
+    .title {
+        text-align: center;
+        width: 100%;
+        font-size: 16rem;
+    }
+
+    @media (max-width: 1112px) {
+        .title {
+            font-size: 14rem;
+        }
+    }
+
+    @media (max-width: 941px) {
+        .title {
+            font-size: 10rem;
+        }
+    }
+
+    @media (max-width: 682px) {
+        .title {
+            font-size: 7rem;
+        }
+    }
+
+    @media (max-width: 501px) {
+        .title {
+            font-size: 4rem;
+        }
+    }
+</style>
 <body class="h-screen" style="background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(198,208,191,1) 0%);">
 
 
