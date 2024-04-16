@@ -35,6 +35,8 @@ Route::get('/All_products', [ProductController::class, 'showProducts']);
 Route::get('/Description/{id}', [ProductController::class, 'showProductDescription'])->name('Description');
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
+
 
 
 // Category routes

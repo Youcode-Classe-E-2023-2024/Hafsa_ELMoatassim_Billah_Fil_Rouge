@@ -53,6 +53,12 @@ class ProductController extends Controller
         return view('Description', compact('product'));
     }
 
+    public function showLast4Products()
+    {
+        $products = Product::latest()->take(4)->get();
+        return view('Home', compact('products'));
+    }
+
     public function softDelete($id)
     {
         $product = Product::findOrFail($id);

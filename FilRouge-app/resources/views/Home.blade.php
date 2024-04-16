@@ -24,7 +24,7 @@
         <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
             <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
             <a href="#" class="no-underline text-black hover:text-green-800 px-4 py-2">About</a>
-            <img src="{{ asset('./assets/images/Logo.png') }}" alt="logo">
+            <a href="/"><img src="{{ asset('./assets/images/Logo.png') }}" alt="logo"></a>
             <a href="/All_products" class="no-underline text-black hover:text-green-800 px-4 py-2">Products</a>
             <a href="/Contact" class="no-underline text-black hover:text-green-800 px-4 py-2">Contact</a>
             <a href="/login" class="no-underline text-black hover:text-green-800 px-4 py-2">Login</a>
@@ -129,25 +129,27 @@
     </div>
     <div class="px-4">
         <div class="block md:flex justify-between md:-mx-2">
+            @foreach($products as $product)
             <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
                 <div class="rounded-lg overflow-hidden shadow relative">
-                    <img class="h-56 w-full object-cover object-center"
-                         src="{{ asset('./assets/images/Rectangle 46.png') }}" alt="">
+                    <a href="/Description/{{ $product->id }}">
+                        <img class="h-56 w-full object-cover object-center"
+                         src="{{ asset('storage/' . $product->image) }}" alt=""></a>
                     <div class="p-4 h-auto md:h-40 lg:h-48">
                         <div class="flex">
-                            <a href="/Description"
+                            <a href="/Description/{{ $product->id }}"
                                class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                                Face Cream
+                                {{ $product->name }}
                             </a>
                             <p class="ml-auto font-black text-gray-800">
-                                $25 &nbsp <span class="text-red-800 line-through">30$</span>
+                                ${{ $product->price }} &nbsp <span class="text-red-800 line-through">30$</span>
                             </p>
                         </div>
                         <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quidem blanditiis unde
                             asperiores?
                         </div>
-                        <a href="/Description"> <button type="button"
+                        <a href="/description/{{ $product->id }}"> <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                             Shop Now
                         </button>
@@ -155,84 +157,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-                <div class="rounded-lg overflow-hidden shadow relative">
-                    <img class="h-56 w-full object-cover object-center"
-                         src="{{ asset('./assets/images/Rectangle 45.png') }}" alt="">
-                    <div class="p-4 h-auto md:h-40 lg:h-48">
-                        <div class="flex">
-                            <a href="/Description"
-                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                                Face Cream
-                            </a>
-                            <p class="ml-auto font-black text-gray-800">
-                                $25 &nbsp <span class="text-red-800 line-through">30$</span>
-                            </p>
-                        </div>
-                        <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quidem blanditiis unde
-                            asperiores?
-                        </div>
-                        <button type="button"
-                                class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Shop Now
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-                <div class="rounded-lg overflow-hidden shadow relative">
-                    <img class="h-56 w-full object-cover object-center"
-                         src="{{ asset('./assets/images/Rectangle 47.png') }}" alt="">
-                    <div class="p-4 h-auto md:h-40 lg:h-48">
-                        <div class="flex">
-                            <a href="/Description"
-                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                                Face Cream
-                            </a>
-                            <p class="ml-auto font-black text-gray-800">
-                                $25 &nbsp <span class="text-red-800 line-through">30$</span>
-                            </p>
-                        </div>
-                        <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quidem blanditiis unde
-                            asperiores?
-                        </div>
-                        <button type="button"
-                                class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Shop Now
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-            <div class="w-full lg:w-1/3 md:mx-2 mb-4 md:mb-0">
-                <div class="rounded-lg overflow-hidden shadow relative">
-                    <img class="h-56 w-full object-cover object-center"
-                         src="{{ asset('./assets/images/Rectangle 44.png') }}" alt="">
-                    <div class="p-4 h-auto md:h-40 lg:h-48">
-                        <div class="flex">
-                            <a href="/Description"
-                               class="block text-gray-800 hover:text-green-800 font-semibold mb-2 text-lg md:text-base lg:text-lg">
-                                Face Cream
-                            </a>
-                            <p class="ml-auto font-black text-gray-800">
-                                $25 &nbsp <span class="text-red-800 line-through">30$</span>
-                            </p>
-                        </div>
-                        <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quidem blanditiis unde
-                            asperiores?
-                        </div>
-                        <button type="button"
-                                class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
-                            Shop Now
-                        </button>
-
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
