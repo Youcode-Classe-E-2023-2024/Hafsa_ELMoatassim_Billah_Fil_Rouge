@@ -9,96 +9,23 @@
     <div class="mx-auto max-w-screen-xl px-4 w-full">
         <div class="grid w-full sm:grid-cols-2 xl:grid-cols-3 gap-6">
 
-            <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
-                <div class="h-auto overflow-hidden">
-                    <div
-                        class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                        <a href="/Description"><img src="{{ asset('./assets/images/Rectangle 46.png') }}"
-                                                    alt="toner"></a>
+            @foreach($products as $product)
+                <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
+                    <div class="h-auto overflow-hidden">
+                        <div class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                            <a href="/Description"><img src="{{  asset('storage/' . $product->image) }}" alt="{{ $product->name }}"></a>
+                        </div>
+                    </div>
+                    <div class="pt-5 text-center">
+                        <h3 class="mb-2 font-medium">{{ $product->title }}</h3>
+                        <div class="flex justify-between items-center">
+                            <p class="w-full text-center text-gray-900">{{ $product->price }}$
+{{--                                <span class="text-red-900">{{ $product->discount_price }}$</span>--}}
+                            </p>
+                        </div>
                     </div>
                 </div>
-                <div class="pt-5 text-center">
-                    <h3 class=" mb-2 font-medium">Face Toner - Geen Tea</h3>
-                    <div class="flex justify-between items-center">
-                        <p class="w-full text-center text-gray-900">19$ <span class="text-red-900">30$</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
-                <div class="h-auto overflow-hidden">
-                    <div
-                        class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                        <img src="{{ asset('./assets/images/Rectangle 45.png') }}" alt="toner">
-                    </div>
-                </div>
-                <div class="pt-5 text-center">
-                    <h3 class=" mb-2 font-medium">Face Toner - Geen Tea</h3>
-                    <div class="flex justify-between items-center">
-                        <p class="w-full text-center text-gray-900">19$ <span class="text-red-900">30$</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
-                <div class="h-auto overflow-hidden">
-                    <div
-                        class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                        <img src="{{ asset('./assets/images/Rectangle 44.png') }}" alt="toner">
-                    </div>
-                </div>
-                <div class="pt-5 text-center">
-                    <h3 class=" mb-2 font-medium">Face Toner - Geen Tea</h3>
-                    <div class="flex justify-between items-center">
-                        <p class="w-full text-center text-gray-900">19$ <span class="text-red-900">30$</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
-                <div class="h-auto overflow-hidden">
-                    <div
-                        class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                        <img src="{{ asset('./assets/images/Rectangle 47.png') }}" alt="toner">
-                    </div>
-                </div>
-                <div class="pt-5 text-center">
-                    <h3 class=" mb-2 font-medium">Face Toner - Geen Tea</h3>
-                    <div class="flex justify-between items-center">
-                        <p class="w-full text-center text-gray-900">19$ <span class="text-red-900">30$</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
-                <div class="h-auto overflow-hidden">
-                    <div
-                        class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                        <img src="{{ asset('./assets/images/Rectangle 48.png') }}" alt="toner">
-                    </div>
-                </div>
-                <div class="pt-5 text-center">
-                    <h3 class=" mb-2 font-medium">Face Toner - Geen Tea</h3>
-                    <div class="flex justify-between items-center">
-                        <p class="w-full text-center text-gray-900">19$ <span class="text-red-900">30$</span></p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
-                <div class="h-auto overflow-hidden">
-                    <div
-                        class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                        <img src="{{ asset('./assets/images/Rectangle 49.png') }}" alt="toner">
-                    </div>
-                </div>
-                <div class="pt-5 text-center">
-                    <h3 class=" mb-2 font-medium">Face Toner - Geen Tea</h3>
-                    <div class="flex justify-between items-center">
-                        <p class="w-full text-center text-gray-900">19$ <span class="text-red-900">30$</span></p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
 
         </div>
     </div>

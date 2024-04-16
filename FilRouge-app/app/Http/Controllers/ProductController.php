@@ -34,8 +34,16 @@ class ProductController extends Controller
     public function showProducts()
     {
         $categories = Category::all();
-
         $products = Product::all();
+
+        return view('All_products', compact('products', 'categories'));
+    }
+
+    public function showProductsAdmin()
+    {
+        $categories = Category::all();
+        $products = Product::all();
+
         return view('Admin.Dash_Product', compact('products', 'categories'));
     }
 
