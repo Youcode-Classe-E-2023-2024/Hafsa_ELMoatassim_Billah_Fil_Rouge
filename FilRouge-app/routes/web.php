@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\ForgotPasswordLinkController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\ProductController;
@@ -14,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function ()
 {return view('Home');});
 
-Route::get('/Contact', function ()
-{return view('Contact');});
-
 Route::get('/FAQ', function ()
 {return view('FAQ');});
-
 
 // Dashboard routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -37,29 +34,26 @@ Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name(
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
 
-
-
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('delete.category');
 
+// Contact routes
+Route::get('/Contact', function ()
+{return view('Contact');});
 
-
+Route::post('/Contact', [ContactController::class, 'store'])->name('contact.store');
+//
+// Auth
 Route::get('/login', [LoginController::class,'login']);
 Route::post('/login', [LoginController::class,'store']);
-
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'store']);
-
 Route::post('/logout', [LogoutController::class, 'destroy']);
 
-
-//Route::get('/dashboard', 'DashboardController@index')->middleware('auth');
-
+// Password Forgot
 Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');
-
 Route::post('/forgot-request', [ForgotPasswordLinkController::class, 'store']);
-
 Route::post('/forgot-password', [ForgotPasswordController::class, 'reset'])->name('new_password');
 
 // Password Reset
