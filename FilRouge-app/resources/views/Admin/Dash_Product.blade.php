@@ -23,31 +23,31 @@
             </div>
 
             <div class="mt-8"></div>
-            <div class="grid grid-cols-2 gap-4 mt-8">
-                <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+            <div class="grid grid-cols mt-8">
+                <div class="py-2 mb-10 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                     <div
-                        class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
-                        <table class="min-w-full">
+                        class="text-center min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
+                        <table class="min-w-full text-center">
                             <thead>
                             <tr>
                                 <th
-                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    class="px-6 py-3 text-start text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                     Title
                                 </th>
                                 <th
-                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                     Price
                                 </th>
                                 <th
-                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                     Category
                                 </th>
                                 <th
-                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                     Quantity
                                 </th>
                                 <th
-                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-left text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                     Manage
                                 </th>
                             </tr>
@@ -56,32 +56,45 @@
                             <tbody class="bg-white">
 
                             @foreach($products as $product)
-                            <tr>
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <div class="flex items-center">
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <div class="flex items-center">
 
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium leading-5 text-gray-900">{{ $product->title }}</div>
+                                            <div class="ml-4">
+                                                <div
+                                                    class="text-sm font-medium leading-5 text-gray-900">{{ $product->title }}</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </td>
+                                    </td>
 
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <div class="text-sm leading-5 text-gray-900">{{ $product->price }}</div>
-                                </td>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <div class="text-sm leading-5 text-gray-900">{{ $product->price }}</div>
+                                    </td>
 
-                                <td
-                                    class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                                    {{ $product->category->name }}
-                                </td>
-                                <td
-                                    class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
-                                    {{ $product->product_nbr }}
-                                </td>
-                                <td class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm font-medium">
-                                    <a href="#" class="text-red-700 hover:text-red-900">Delete</a>
-                                </td>
-                            </tr>
+                                    <td
+                                        class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                        @foreach($categories as $category)
+                                            @if($category->id==$product->category)
+                                                {{ $category->name }}
+                                            @endif
+                                        @endforeach
+                                    </td>
+                                    <td
+                                        class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                        {{ $product->product_nbr }}
+                                    </td>
+                                    <td class="flex justify-between px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm font-medium">
+                                       <!-- delete-->
+                                        <form action="{{ route('products.softDelete', ['id' => $product->id]) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="text-red-700 hover:text-red-900">Delete</button>
+                                        </form>
+
+                                        <a href="#" class="text-blue-700 hover:text-blue-900">Edit</a>
+                                    </td>
+
+                                </tr>
                             @endforeach
 
                             </tbody>
@@ -108,18 +121,18 @@
                             <tbody class="bg-white">
 
                             @foreach($categories as $category)
-                            <tr>
-                                <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                    <div class="text-sm leading-5 text-gray-900">{{ $category->name }}</div>
-                                </td>
-                                <td class="px-6 border-b border-gray-200">
-                                    <form action="{{ route('delete.category', $category->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-success text-red-500">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <div class="text-sm leading-5 text-gray-900">{{ $category->name }}</div>
+                                    </td>
+                                    <td class="px-6 border-b border-gray-200">
+                                        <form action="{{ route('delete.category', $category->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-success text-red-500">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
                             @endforeach
 
                             </tbody>
@@ -166,7 +179,8 @@
                                            placeholder="Enter Title" required>
                                 </div>
                                 <div class="col-span-2 sm:col-span-1">
-                                    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                                    <label for="price"
+                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
                                     <input type="number" name="price" id="price"
                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                            placeholder="Enter price" required>

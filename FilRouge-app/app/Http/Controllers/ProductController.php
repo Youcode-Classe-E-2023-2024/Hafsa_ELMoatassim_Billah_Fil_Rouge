@@ -28,16 +28,26 @@ class ProductController extends Controller
         $product->category = $request->category;
         $product->save();
 
-        return redirect()->route('Admin.Dash_Product')->with('success', 'Product added successfully.');
+        return redirect()->back()->with('success', 'Product added successfully.');
     }
 
     public function showProducts()
     {
+        $categories = Category::all();
 
         $products = Product::all();
-
-        return view('Admin.Dash_Product', ['products' => $products]);
+        return view('Admin.Dash_Product', compact('products', 'categories'));
     }
+
+    public function softDelete($id)
+    {
+        $product = Product::findOrFail($id);
+        $product->delete();
+
+        return redirect()->back()->with('success', 'Product soft deleted successfully.');
+    }
+
+
 
 
 

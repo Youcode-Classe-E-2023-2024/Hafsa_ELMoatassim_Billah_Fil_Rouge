@@ -33,18 +33,16 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 // User management routes
 Route::delete('/dashboard/{user}', [DashboardController::class, 'banUser'])->name('ban.user');
-Route::patch('/dashboard/recover/{user}', [DashboardController::class, 'recoverUser'])->name('recover.user');
+Route::patch('/Admin/dashboard/recover/{user}', [DashboardController::class, 'recoverUser'])->name('recover.user');
 
 // Product routes
 Route::post('/Admin/Dash_Product', [ProductController::class, 'addProduct'])->name('Admin.Dash_Product');
-Route::get('/Admin/Dash_Product', [ProductController::class, 'showProducts'])->name('Admin.Dash_Product');
-
+Route::get('/Dash_Product', [ProductController::class, 'showProducts']);
+Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
-Route::get('/Dash_Product', [CategoryController::class, 'showCategories'])->name('show.categories');
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('delete.category');
-Route::get('/Admin/Dash_Product', [CategoryController::class, 'showCategories'])->name('show.categories');
 
 
 

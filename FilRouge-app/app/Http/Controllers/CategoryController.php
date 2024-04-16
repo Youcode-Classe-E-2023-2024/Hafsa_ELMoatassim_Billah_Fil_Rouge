@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -30,11 +31,13 @@ class CategoryController extends Controller
      */
 
 
-    public function showCategories()
-    {
-        $categories = Category::all();
-        return view('Admin.Dash_Product', ['categories' => $categories]);
-    }
+//    public function showCategories()
+//    {
+//        $categories = Category::all();
+////        $products = Product::all();
+//
+//        return view('Admin.Dash_Product', ['categories' => $categories, 'products' => $products]);
+//    }
 
     /**
      * Remove the specified resource from storage.
