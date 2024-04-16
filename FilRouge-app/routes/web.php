@@ -30,7 +30,7 @@ Route::patch('/Admin/dashboard/recover/{user}', [DashboardController::class, 're
 
 // Product routes
 Route::post('/Admin/Dash_Product', [ProductController::class, 'addProduct'])->name('Admin.Dash_Product');
-//Route::get('/Dash_Product', [ProductController::class, 'showProducts']);
+Route::get('/Dash_Product', [ProductController::class, 'showProductsAdmin']);
 Route::get('/All_products', [ProductController::class, 'showProducts']);
 Route::get('/Description/{id}', [ProductController::class, 'showProductDescription'])->name('Description');
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');

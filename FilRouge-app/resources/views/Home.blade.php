@@ -149,7 +149,7 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo quidem blanditiis unde
                             asperiores?
                         </div>
-                        <a href="/description/{{ $product->id }}"> <button type="button"
+                        <a href="/Description/{{ $product->id }}"> <button type="button"
                                 class="my-5 w-full text-orange-900 border border-orange-700 focus:outline-none hover:bg-orange-100 focus:ring-4 focus:ring-orange-100 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
                             Shop Now
                         </button>
