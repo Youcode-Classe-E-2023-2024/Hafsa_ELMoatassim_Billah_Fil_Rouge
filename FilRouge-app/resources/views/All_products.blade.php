@@ -13,7 +13,7 @@
                 <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
                     <div class="h-auto overflow-hidden">
                         <div class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
-                            <a href="/Description"><img src="{{  asset('storage/' . $product->image) }}" alt="{{ $product->name }}"></a>
+                            <a href="/Description/{{ $product->id }}"><img src="{{  asset('storage/' . $product->image) }}" alt="{{ $product->name }}"></a>
                         </div>
                     </div>
                     <div class="pt-5 text-center">

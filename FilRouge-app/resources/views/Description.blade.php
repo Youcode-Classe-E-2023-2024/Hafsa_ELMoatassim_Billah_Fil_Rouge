@@ -19,20 +19,18 @@
 @include('Partials.nav')
 {{--@include('Partials.SearchBar')--}}
 
-
 <div class="flex flex-col justify-center my-20">
-    <div
-            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-3xl mx-auto">
+    <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-3xl mx-auto">
         <div class="w-full grid place-items-center">
-            <img src="{{ asset('./assets/images/Rectangle 46.png') }}" alt="tailwind logo"
-                 class="shadow-lg rounded-xl"/>
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="shadow-lg rounded-xl"/>
         </div>
         <div class="w-full flex flex-col space-y-2 p-3">
-            <h3 class="font-black text-gray-800 md:text-3xl text-xl">Face Cream - Green Tea</h3>
+            <h3 class="font-black text-gray-800 md:text-3xl text-xl">{{ $product->title }}</h3>
             <p class="md:text-lg text-green-500 font-bold">In Stock</p>
-            <p class="text-xl font-black text-gray-800">
-                $25 &nbsp <span class="text-red-800 line-through">30$</span>
+            <p class="text-xl font-black text-gray-800">{{ $product->price }}$
+{{--                <span class="text-red-800 line-through">30$</span>--}}
             </p>
+            <!-- Add other product details here -->
             <div class="flex p-1 gap-1 text-orange-300">
                 <ion-icon name="star"></ion-icon>
                 <ion-icon name="star"></ion-icon>
@@ -73,24 +71,7 @@
 </div>
 
 <div class="max-w-4xl text-center m-auto px-10  py-6 rounded-lg shadow-md">
-    <p class="text-gray-600">
-        Discover our Green Tea Cleansing Gel, a deep cleansing solution that preserves your skin's natural hydration.
-        Designed to provide a gentle and effective experience, this gel contains carefully selected natural ingredients,
-        such as Camelia Sinensis extract with hydrating, anti-inflammatory and anti-aging properties, as well as
-        Chamomilla Recutita extract, soothing and hydrating .
-        <br><br>
-        Our unique formula incorporates Laurdimonium hydroxypropyl hydrolyzed wheat protein, strengthening the skin
-        barrier and minimizing fine lines. With the gentle surfactant Cocamidopropyl betaine, this gel provides a gentle
-        cleansing experience without the drying effects. Additionally, our product is free of sulfates, parabens,
-        silicones and other harmful chemicals, making it ideal for sensitive skin.
-        <br><br>
-        The generous capacity of 120 ml guarantees long-lasting use. The full INCI list attests to our commitment to
-        quality ingredients, with a concentration of 97% of ingredients of natural origin. We've removed silicones,
-        parabens and sulfates from our formula, making Hazel Gel Cleanser the ideal choice for your skincare routine.
-        <br><br>
-        For all skin types, even the most sensitive, our Cleansing Gel offers a feeling of softness and freshness.
-        Before first use, perform a patch test on a small area, especially if you have atopic skin or dermatological
-        problems. For radiant and healthy skin, adopt Hazel Green Tea Cleansing Gel</p>
+    <p class="text-gray-600">{{ $product->description }}</p>
 </div>
 
 @include('Partials.footer')

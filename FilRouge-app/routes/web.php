@@ -11,15 +11,8 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
-
 Route::get('/', function ()
 {return view('Home');});
-
-Route::get('/All_products', function ()
-{return view('All_products');});
-
-Route::get('/Description', function ()
-{return view('Description');});
 
 Route::get('/Contact', function ()
 {return view('Contact');});
@@ -39,7 +32,7 @@ Route::patch('/Admin/dashboard/recover/{user}', [DashboardController::class, 're
 Route::post('/Admin/Dash_Product', [ProductController::class, 'addProduct'])->name('Admin.Dash_Product');
 //Route::get('/Dash_Product', [ProductController::class, 'showProducts']);
 Route::get('/All_products', [ProductController::class, 'showProducts']);
-
+Route::get('/Description/{id}', [ProductController::class, 'showProductDescription'])->name('Description');
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 

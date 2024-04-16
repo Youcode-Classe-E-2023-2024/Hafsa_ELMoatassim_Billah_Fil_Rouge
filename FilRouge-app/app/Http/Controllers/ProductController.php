@@ -47,6 +47,12 @@ class ProductController extends Controller
         return view('Admin.Dash_Product', compact('products', 'categories'));
     }
 
+    public function showProductDescription($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('Description', compact('product'));
+    }
+
     public function softDelete($id)
     {
         $product = Product::findOrFail($id);
