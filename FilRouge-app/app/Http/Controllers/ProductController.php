@@ -47,6 +47,18 @@ class ProductController extends Controller
         return redirect()->back()->with('success', 'Product soft deleted successfully.');
     }
 
+    public function update(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $product->price = $request->input('price');
+        $product->product_nbr = $request->input('product_nbr');
+
+        $product->save();
+
+        return redirect()->back()->with('success', 'Product updated successfully.');
+    }
+
+
 
 
 

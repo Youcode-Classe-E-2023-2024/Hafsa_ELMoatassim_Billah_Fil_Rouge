@@ -39,6 +39,8 @@ Route::patch('/Admin/dashboard/recover/{user}', [DashboardController::class, 're
 Route::post('/Admin/Dash_Product', [ProductController::class, 'addProduct'])->name('Admin.Dash_Product');
 Route::get('/Dash_Product', [ProductController::class, 'showProducts']);
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
+Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
