@@ -76,7 +76,8 @@
                                     </td>
 
                                     <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                        <div class="text-sm leading-5 line-through text-red-900">{{ $product->oldprice }}</div>
+                                        <div
+                                            class="text-sm leading-5 line-through text-red-900">{{ $product->oldprice }}</div>
                                     </td>
 
                                     <td
@@ -92,27 +93,66 @@
                                         {{ $product->product_nbr }}
                                     </td>
                                     <td class="flex justify-evenly px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm font-medium">
-                                       <!-- delete-->
-                                        <form action="{{ route('products.softDelete', ['id' => $product->id]) }}" method="POST">
+                                        <!-- delete-->
+                                        <form action="{{ route('products.softDelete', ['id' => $product->id]) }}"
+                                              method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="middle none center mr-4 rounded-lg bg-red-500 py-2 px-5 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Delete</button>
+                                            <button type="submit" class="text-red-700">
+                                                Delete
+                                            </button>
                                         </form>
 
                                         <!-- edite-->
-                                        <button type="button" data-modal-target="crud-modal3" data-modal-toggle="crud-modal3"
-                                                class="middle none center rounded-lg bg-blue-500 py-2 px-5 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                        <button type="button" data-modal-target="crud-modal3-{{$product->id}}" data-modal-toggle="crud-modal3-{{$product->id}}" class="text-blue-800">
                                             Edit
                                         </button>
                                     </td>
-
                                 </tr>
+
+                                <!-- Edite Product -->
+                                <div id="crud-modal3-{{$product->id}}" tabindex="-1" aria-hidden="true"
+                                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                                    <div class="relative p-4 w-full max-w-md max-h-full">
+                                        <div class="relative px-5 py-5 bg-white rounded-lg shadow dark:bg-gray-700">
+
+                                            <form action="{{ route('products.update', ['id' => $product->id]) }}" method="POST">
+                                                @csrf
+                                                @method('PUT')
+                                                <input type="" name="id" value="{{ $product->id }}">
+
+                                                <div class="grid gap-4 mb-4 grid-cols-2">
+                                                    <div class="col-span-2 sm:col-span-1">
+                                                        <label for="price"
+                                                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                                                        <input type="number" name="price" id="price"
+                                                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                               placeholder="Enter price" required>
+                                                    </div>
+                                                    <div class="col-span-2 sm:col-span-1">
+                                                        <label for="quantity"
+                                                               class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantity</label>
+                                                        <input type="number" name="product_nbr" id="quantity"
+                                                               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                                               placeholder="Quantity" required>
+                                                    </div>
+                                                </div>
+                                                <button type="submit"
+                                                        class="text-white inline-flex items-center bg-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
+                                                    Edit Product
+                                                </button>
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
 
                             </tbody>
                         </table>
                     </div>
                 </div>
+
                 <div class="py-2 -my-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
                     <div
                         class="inline-block min-w-full overflow-hidden align-middle border-b border-gray-200 shadow sm:rounded-lg">
@@ -152,7 +192,7 @@
                     </div>
                 </div>
             </div>
-                         <!-- Add Product -->
+            <!-- Add Product -->
             <div id="crud-modal" tabindex="-1" aria-hidden="true"
                  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full max-w-md max-h-full">
@@ -187,21 +227,28 @@
                                            placeholder="Enter Title" required>
                                 </div>
                                 <div class="col-span-2 sm:col-span-1">
-                                    <label for="price"
-                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                                    <input type="number" name="price" id="price"
-                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                                           placeholder="Enter price" required>
-                                </div>
-
-                                <div class="col-span-2 sm:col-span-1">
                                     <label for="quantity"
                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantity</label>
                                     <input type="number" name="product_nbr" id="quantity"
                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                                            placeholder="Quantity" required>
                                 </div>
+
                                 <div class="col-span-2 sm:col-span-1">
+                                    <label for="price"
+                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
+                                    <input type="number" name="price" id="price"
+                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                           placeholder="Enter price" required>
+                                </div>
+                                <div class="col-span-2 sm:col-span-1">
+                                    <label for="price"
+                                           class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Old Price</label>
+                                    <input type="number" name="oldprice" id="oldprice"
+                                           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                                           placeholder="Enter The Old price" required>
+                                </div>
+                                <div class="col-span-2">
                                     <label for="category"
                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
                                     <select id="category" name="category"
@@ -212,6 +259,7 @@
                                         @endforeach
                                     </select>
                                 </div>
+
                                 <div class="col-span-2">
                                     <label for="description"
                                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Product
@@ -220,6 +268,7 @@
                                               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                               placeholder="Write product description here"></textarea>
                                 </div>
+
                                 <div class="col-span-2">
                                     <label for="file_input"
                                            class="block mb-2 text-sm font-medium text-green-900 dark:text-white">Upload
@@ -228,6 +277,7 @@
                                         class="block w-full text-sm text-green-900 border border-gray-300 rounded-lg cursor-pointer bg-green-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                         id="file_input" name="image" type="file">
                                 </div>
+
                             </div>
                             <button type="submit"
                                     class="text-white inline-flex items-center bg-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">
@@ -238,7 +288,7 @@
                 </div>
             </div>
 
-                        <!-- Add Category -->
+            <!-- Add Category -->
             <div id="crud-modal2" tabindex="-1" aria-hidden="true"
                  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                 <div class="relative p-4 w-full max-w-md max-h-full">
@@ -282,34 +332,5 @@
                 </div>
             </div>
 
-                         <!-- Edite Product -->
-            <div id="crud-modal3" tabindex="-1" aria-hidden="true"
-                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                    <div class="relative px-5 py-5 bg-white rounded-lg shadow dark:bg-gray-700">
-
-                        <!-- Modal body -->
-                        <form action="{{ route('products.update', ['id' => $product->id]) }}" method="POST">
-                            @csrf
-                            @method('PUT')
-                            <div class="grid gap-4 mb-4 grid-cols-2">
-                                <div class="col-span-2 sm:col-span-1">
-                                    <label for="price" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
-                                    <input type="number" name="price" id="price" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Enter price" required>
-                                </div>
-                                <div class="col-span-2 sm:col-span-1">
-                                    <label for="quantity" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Quantity</label>
-                                    <input type="number" name="product_nbr" id="quantity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Quantity" required>
-                                </div>
-                            </div>
-                            <button type="submit" class="text-white inline-flex items-center bg-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Edit Product</button>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-
-
-
         </div>
-
+</div>

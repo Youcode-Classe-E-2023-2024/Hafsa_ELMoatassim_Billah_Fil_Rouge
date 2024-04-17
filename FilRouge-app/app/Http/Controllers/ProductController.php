@@ -34,7 +34,7 @@ class ProductController extends Controller
     public function showProducts()
     {
         $categories = Category::all();
-        $products = Product::all();
+        $products = Product::whereNull('deleted_at')->get();
 
         return view('All_products', compact('products', 'categories'));
     }

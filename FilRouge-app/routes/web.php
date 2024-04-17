@@ -21,6 +21,9 @@ Route::get('/FAQ', function ()
 Route::get('/About', function ()
 {return view('About');});
 
+Route::get('/Dash_Contact', function ()
+{return view('Admin.Dash_Contact');});
+
 // Dashboard routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

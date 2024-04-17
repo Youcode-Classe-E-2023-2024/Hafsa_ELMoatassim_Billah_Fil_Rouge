@@ -17,6 +17,7 @@ class Product extends Model
         'price',
         'product_nbr',
         'description',
+        'oldprice',
         'image',
         'category',
     ];
