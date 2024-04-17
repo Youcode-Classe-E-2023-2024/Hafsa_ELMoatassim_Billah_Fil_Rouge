@@ -28,7 +28,7 @@
             <h3 class="font-black text-gray-800 md:text-3xl text-xl">{{ $product->title }}</h3>
             <p class="md:text-lg text-green-500 font-bold">In Stock</p>
             <p class="text-xl font-black text-gray-800">{{ $product->price }}$
-{{--                <span class="text-red-800 line-through">30$</span>--}}
+                <span class="text-red-800 line-through">{{ $product->oldprice }}$</span>
             </p>
             <!-- Add other product details here -->
             <div class="flex p-1 gap-1 text-orange-300">

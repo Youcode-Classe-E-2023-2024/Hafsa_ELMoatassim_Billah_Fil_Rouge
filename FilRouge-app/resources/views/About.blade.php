@@ -23,16 +23,15 @@
                     <h2 class="mb-6 max-w-lg text-5xl font-light leading-snug tracking-tight text-g1 sm:text-7xl sm:leading-snug">
                         We make you look
                         <span
-                            class="my-1 inline-block border-b-8 border-g4 bg-white px-4 font-bold text-g4 animate__animated animate__flash">different</span>
+                            class="my-1 inline-block border-b-8 border-g4 text-green-950 bg-white px-4 font-bold text-g4 animate__animated animate__flash">different</span>
                     </h2>
                     <p class="text-base text-gray-700">
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque it.</p>
                     <div class="mt-10 flex flex-col items-center md:flex-row">
-                        <a href="/"
-                           class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-green-800 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-green-900 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
-                            View More</a>
-                        <a href="/" aria-label="" class="group inline-flex items-center font-semibold text-g1">Watch how
-                            it works
+                        <a href="/All_products"
+                           class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-green-950 px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-green-900 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
+                            Shop Now</a>
+                        <a href="/FAQ" aria-label="" class="group inline-flex items-center font-semibold text-g1">Any Questions?
                             <svg xmlns="http://www.w3.org/2000/svg"
                                  class="ml-4 h-6 w-6 transition-transform group-hover:translate-x-2" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

@@ -20,7 +20,7 @@
                         <h3 class="mb-2 font-medium">{{ $product->title }}</h3>
                         <div class="flex justify-between items-center">
                             <p class="w-full text-center text-gray-900">{{ $product->price }}$
-{{--                                <span class="text-red-900">{{ $product->discount_price }}$</span>--}}
+                                <span class="text-red-900 line-through">{{ $product->oldprice }}$</span>
                             </p>
                         </div>
                     </div>

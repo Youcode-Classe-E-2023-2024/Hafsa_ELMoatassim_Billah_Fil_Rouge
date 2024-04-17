@@ -40,6 +40,10 @@
                                 </th>
                                 <th
                                     class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
+                                    Old Price
+                                </th>
+                                <th
+                                    class="px-6 py-3 text-xs font-medium leading-4 tracking-wider text-gray-500 uppercase border-b border-gray-200 bg-gray-50">
                                     Category
                                 </th>
                                 <th
@@ -57,7 +61,7 @@
 
                             @foreach($products as $product)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                    <td class="px-6 py- whitespace-no-wrap border-b border-gray-200">
                                         <div class="flex items-center">
 
                                             <div class="ml-4">
@@ -71,8 +75,12 @@
                                         <div class="text-sm leading-5 text-gray-900">{{ $product->price }}</div>
                                     </td>
 
+                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                        <div class="text-sm leading-5 line-through text-red-900">{{ $product->oldprice }}</div>
+                                    </td>
+
                                     <td
-                                        class="px-6 py-4 text-sm leading-5 text-gray-500 whitespace-no-wrap border-b border-gray-200">
+                                        class="px-6 py-4 text-sm leading-5 text-gray-900 whitespace-no-wrap border-b border-gray-200">
                                         @foreach($categories as $category)
                                             @if($category->id==$product->category)
                                                 {{ $category->name }}
@@ -88,12 +96,12 @@
                                         <form action="{{ route('products.softDelete', ['id' => $product->id]) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="text-red-700 hover:text-red-900 pt-3">Delete</button>
+                                            <button type="submit" class="middle none center mr-4 rounded-lg bg-red-500 py-2 px-5 font-sans text-xs font-bold uppercase text-white shadow-md shadow-red-500/20 transition-all hover:shadow-lg hover:shadow-red-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">Delete</button>
                                         </form>
 
                                         <!-- edite-->
                                         <button type="button" data-modal-target="crud-modal3" data-modal-toggle="crud-modal3"
-                                                class="text-blue-700 hover:text-blue-900">
+                                                class="middle none center rounded-lg bg-blue-500 py-2 px-5 font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                                             Edit
                                         </button>
                                     </td>
