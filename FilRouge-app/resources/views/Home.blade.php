@@ -142,7 +142,7 @@
                                 {{ $product->name }}
                             </a>
                             <p class="ml-auto font-black text-gray-800">
-                                ${{ $product->price }} &nbsp <span class="text-red-800 line-through">30$</span>
+                                ${{ $product->price }} &nbsp <span class="text-red-800 line-through">${{ $product->oldprice }}</span>
                             </p>
                         </div>
                         <div class="text-gray-600 text-sm leading-relaxed block md:text-xs lg:text-sm">

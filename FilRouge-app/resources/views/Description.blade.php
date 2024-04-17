@@ -17,7 +17,6 @@
 </style>
 
 @include('Partials.nav')
-{{--@include('Partials.SearchBar')--}}
 
 <div class="flex flex-col justify-center my-20">
     <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-3xl mx-auto">
@@ -74,7 +73,7 @@
     <p class="text-gray-600">{{ $product->description }}</p>
 </div>
 
-@include('Partials.footer')
+
 
 <script>
     function decrement(e) {
@@ -113,3 +112,5 @@
         btn.addEventListener("click", increment);
     });
 </script>
+
+@include('Partials.footer')
