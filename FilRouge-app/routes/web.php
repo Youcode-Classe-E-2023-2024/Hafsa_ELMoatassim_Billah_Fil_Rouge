@@ -45,11 +45,10 @@ Route::post('/categories', [CategoryController::class, 'store'])->name('add.cate
 Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('delete.category');
 
 // Contact routes
-Route::get('/Contact', function ()
-{return view('Contact');});
-
 Route::post('/Contact', [ContactController::class, 'store'])->name('contact.store');
-//
+Route::get('/Dash_Contact', [ContactController::class, 'index'])->name('contacts.index');
+
+
 // Auth
 Route::get('/login', [LoginController::class,'login']);
 Route::post('/login', [LoginController::class,'store']);

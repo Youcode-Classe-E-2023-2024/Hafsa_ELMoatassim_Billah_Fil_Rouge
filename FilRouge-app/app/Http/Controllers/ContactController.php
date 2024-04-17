@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    public function index()
+    {
+        $contacts = Contact::all();
+        return view('Admin.Dash_Contact', ['contacts' => $contacts]);
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
