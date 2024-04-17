@@ -18,6 +18,9 @@ Route::get('/', function ()
 Route::get('/FAQ', function ()
 {return view('FAQ');});
 
+Route::get('/About', function ()
+{return view('About');});
+
 // Dashboard routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
