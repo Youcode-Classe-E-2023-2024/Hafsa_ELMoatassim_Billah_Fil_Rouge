@@ -22,7 +22,7 @@
                         </div>
                         <div class="p-4">
                             <a href="/Dash_Contact"><div class="bg-green-900 rounded-lg p-2 xl:p-6">
-                                <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">35</h2>
+                                <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">{{ $totalContacts }}</h2>
                                 <p class="leading-relaxed text-gray-100 font-bold">Contact Form</p>
                             </div></a>
                         </div>
