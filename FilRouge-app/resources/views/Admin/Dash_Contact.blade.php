@@ -34,7 +34,6 @@
                                     <form action="/contact" class="p-4 md:p-5" method="POST">
                                         @csrf
                                         <input type="hidden" name="email" value="{{ $contact->email }}">
-
                                         <div class="col-span-2">
                                             <label for="description"
                                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">

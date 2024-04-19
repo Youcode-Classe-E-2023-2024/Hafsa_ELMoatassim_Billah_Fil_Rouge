@@ -10,9 +10,10 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::where('status', 'not treated')->get();
         return view('Admin.Dash_Contact', ['contacts' => $contacts]);
     }
+
 
     public function store(Request $request)
     {
@@ -33,5 +34,7 @@ class ContactController extends Controller
 
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
+
+
 
 }
