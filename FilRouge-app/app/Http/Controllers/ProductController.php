@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NewsProduct;
 use App\Models\Category;
+use App\Models\Newsletter;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ProductController extends Controller
 {
@@ -13,6 +17,7 @@ class ProductController extends Controller
         $request->validate([
             'title' => 'required',
             'price' => 'required|numeric',
+            'oldprice' => 'required|numeric',
             'product_nbr' => 'required',
             'description' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -22,13 +27,31 @@ class ProductController extends Controller
         $product = new Product();
         $product->title = $request->title;
         $product->price = $request->price;
+        $product->oldprice = $request->oldprice;
         $product->product_nbr = $request->product_nbr;
         $product->description = $request->description;
         $product->image = $request->image->store('images', 'public');
         $product->category = $request->category;
         $product->save();
 
+        if ($product) {
+            $this->sendEmailToSubscriber();
+        }
+
         return redirect()->back()->with('success', 'Product added successfully.');
+    }
+
+    private function sendEmailToSubscriber()
+    {
+        $user = Auth::user();
+
+        $subscribers = Newsletter::where('subscribed', '1')->get();
+
+        if ($subscribers) {
+            foreach ($subscribers as $subscriber) {
+                Mail::to($subscriber->email)->send(new NewsProduct($user));
+            }
+        }
     }
 
     public function showProducts()
