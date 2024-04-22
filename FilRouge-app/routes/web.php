@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordLinkController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactAdminController;
 use App\Http\Controllers\ContactController;
@@ -52,11 +53,15 @@ Route::get('/Contact', function ()
 {return view('Contact');});
 Route::post('/Contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/Dash_Contact', [ContactController::class, 'index'])->name('contacts.index');
-//Route::post('/contact', [ContactAdminController::class, 'contact']);
 Route::post('/contact', [ContactAdminController::class, 'contact'])->name('contact');
 
 // Subscriber routes
 Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
+
+// Blogs routes
+Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');
+Route::get('/Dash_Blog', [BlogsController::class, 'showBlogs'])->name('blogs.show');
+Route::delete('/blogs/{id}', [BlogsController::class, 'deleteBlog'])->name('blogs.delete');
 
 // Auth
 Route::get('/login', [LoginController::class,'login']);

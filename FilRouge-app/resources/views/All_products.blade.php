@@ -7,12 +7,12 @@
 
 <div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
     <div class="mx-auto max-w-screen-xl px-4 w-full">
-        <div class="grid w-full sm:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div class="grid w-full sm:grid-cols-3 xl:grid-cols-3 gap-6">
 
             @foreach($products as $product)
                 <div class="relative flex flex-col rounded-xl aspect-w-1 aspect-h-1">
                     <div class="h-auto overflow-hidden">
-                        <div class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg">
+                        <div class="shadow-gray-500/20 relative mx-4 mt-4 h-70 overflow-hidden rounded-xl bg-clip-border text-gray-700 shadow-lg">
                             <a href="/Description/{{ $product->id }}"><img src="{{  asset('storage/' . $product->image) }}" alt="{{ $product->name }}"></a>
                         </div>
                     </div>
