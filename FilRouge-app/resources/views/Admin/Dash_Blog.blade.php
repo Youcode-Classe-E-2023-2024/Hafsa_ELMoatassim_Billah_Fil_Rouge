@@ -98,6 +98,14 @@
                                 {{ $blog->title }}
                             </a>
                         </h3>
+                        <form action="{{ route('deleteBlog', ['id' => $blog->id]) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this blog?')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="w-full mt-5 block text-white mr-5 bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-2.5 py-1.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="submit">
+                                Delete
+                            </button>
+                        </form>
+
                     </article>
                     @endforeach
                 </div>

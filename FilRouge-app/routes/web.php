@@ -61,7 +61,7 @@ Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
 // Blogs routes
 Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');
 Route::get('/Dash_Blog', [BlogsController::class, 'showBlogs'])->name('blogs.show');
-Route::delete('/blogs/{id}', [BlogsController::class, 'deleteBlog'])->name('blogs.delete');
+Route::delete('blogs/{id}', [BlogsController::class, 'deleteBlog'])->name('deleteBlog');
 
 // Auth
 Route::get('/login', [LoginController::class,'login']);

@@ -38,4 +38,5 @@ class BlogsController extends Controller
         return redirect()->back()->with('success', 'Blog deleted successfully.');
     }
 
+
 }
