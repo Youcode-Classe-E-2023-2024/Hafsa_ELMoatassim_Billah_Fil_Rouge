@@ -67,7 +67,7 @@ Route::get('/Dash_Blog', [BlogsController::class, 'showBlogs'])->name('blogs.sho
 Route::delete('blogs/{id}', [BlogsController::class, 'deleteBlog'])->name('deleteBlog');
 Route::get('/Blog', [BlogsController::class, 'showBlog'])->name('blogs.show');
 Route::get('/Blog_Description/{id}', [BlogsController::class, 'showBlogDescription'])->name('Blog_Description');
-Route::post('blogs/{id}/update', [BlogsController::class,'updateBlog'])->name('blogs.update');
+Route::post('Blogs/{id}', [BlogsController::class,'updateBlog']);
 
 // Auth
 Route::get('/login', [LoginController::class,'login']);

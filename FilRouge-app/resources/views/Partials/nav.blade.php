@@ -30,6 +30,7 @@
     <div class="sm:mb-0 self-center">
         <a href="/" class="text-md no-underline text-black hover:text-green-800 ml-2 px-1">Home</a>
         <a href="/All_products" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">Products</a>
+        <a href="/Blog" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">Blogs</a>
         <a href="/Contact" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">Contact Us</a>
         <a href="/FAQ" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">FAQ</a>
         <a href="/About" class="text-md no-underline text-grey-darker hover:text-green-800 ml-2 px-1">About Us</a>
