@@ -30,6 +30,18 @@ class BlogsController extends Controller
         return view('Admin.Dash_Blog', compact('blogs'));
     }
 
+    public function showBlog()
+    {
+        $blogs = Blog::all();
+        return view('Blog', compact('blogs'));
+    }
+
+    public function showBlogDescription($id)
+    {
+        $blog = Blog::findOrFail($id);
+        return view('Blog_Description', compact('blog'));
+    }
+
     public function deleteBlog($id)
     {
         $blog = Blog::findOrFail($id);
@@ -37,6 +49,23 @@ class BlogsController extends Controller
 
         return redirect()->back()->with('success', 'Blog deleted successfully.');
     }
+
+    public function updateBlog(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        $blog = Blog::findOrFail($id);
+        $blog->title = $validatedData['title'];
+        $blog->content = $validatedData['content'];
+
+        $blog->save();
+
+        return redirect()->back()->with('success', 'Blog updated successfully.');
+    }
+
 
 
 }

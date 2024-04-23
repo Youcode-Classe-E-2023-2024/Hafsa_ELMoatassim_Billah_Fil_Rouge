@@ -25,6 +25,9 @@ Route::get('/FAQ', function ()
 Route::get('/About', function ()
 {return view('About');});
 
+Route::get('/Blog', function ()
+{return view('Blog');});
+
 Route::get('/Dash_Contact', function ()
 {return view('Admin.Dash_Contact');});
 
@@ -62,6 +65,9 @@ Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
 Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');
 Route::get('/Dash_Blog', [BlogsController::class, 'showBlogs'])->name('blogs.show');
 Route::delete('blogs/{id}', [BlogsController::class, 'deleteBlog'])->name('deleteBlog');
+Route::get('/Blog', [BlogsController::class, 'showBlog'])->name('blogs.show');
+Route::get('/Blog_Description/{id}', [BlogsController::class, 'showBlogDescription'])->name('Blog_Description');
+Route::post('blogs/{id}/update', [BlogsController::class,'updateBlog'])->name('blogs.update');
 
 // Auth
 Route::get('/login', [LoginController::class,'login']);

@@ -24,6 +24,7 @@
         <div class="navbar absolute inset-x-0 top-8 transform -translate-y-1/2 flex justify-center pt-10 z-10">
             <a href="/" class="no-underline text-black hover:text-green-800 px-4 py-2">Home</a>
             <a href="/About" class="no-underline text-black hover:text-green-800 px-4 py-2">About</a>
+            <a href="/Blog" class="no-underline text-black hover:text-green-800 px-4 py-2">Blogs</a>
             <a href="/"><img src="{{ asset('./assets/images/Logo.png') }}" alt="logo"></a>
             <a href="/All_products" class="no-underline text-black hover:text-green-800 px-4 py-2">Products</a>
             <a href="/Contact" class="no-underline text-black hover:text-green-800 px-4 py-2">Contact</a>
