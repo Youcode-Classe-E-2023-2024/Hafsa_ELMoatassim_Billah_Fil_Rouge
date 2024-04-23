@@ -8,11 +8,11 @@
             <div class="self-start hidden lg:flex flex-col  text-white">
                 <img src="" class="mb-3">
                 <h1 class="mb-3 font-bold text-5xl">Hi ? Welcome Back </h1>
-                <p class="pr-3">Discover the rejuvenating power of green tea for you skin. Our carefully curated green
-                    tea skincare products harness the
-                    antioxidant-rich properties of this natural wonder, protecting your skin from external aggressors,
-                    promoting your skin from external
-                    aggressors, promoting hydration, and minimizing fine lines.
+                <p class="pr-3">Discover the rejuvenating power of green tea for you skin. <br>
+                    Our carefully curated green tea skincare products harness the antioxidant-rich <br>
+                    properties of this natural wonder, protecting your skin from external aggressors,<br>
+                    promoting your skin from external aggressors, promoting hydration, <br>
+                    and minimizing fine lines.
                 </p>
             </div>
         </div>
@@ -59,12 +59,12 @@
 
                     <div>
                         <button type="submit"
-                                class="w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-3 rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                                class="w-full flex justify-center bg-green-900  hover:bg-green-800 text-gray-100 p-2 rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                             Register
                         </button>
                         <a href="login">
                             <button type="button"
-                                    class="mt-5 w-full flex justify-center p-3 bg-green-900  hover:bg-green-800 rounded-full text-white tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
+                                    class="mt-5 w-full flex justify-center p-2 bg-green-900  hover:bg-green-800 rounded-full text-white tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500">
                                 Login
                             </button>
                         </a>

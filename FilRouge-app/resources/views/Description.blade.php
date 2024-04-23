@@ -29,6 +29,7 @@
             <p class="text-xl font-black text-gray-800">{{ $product->price }}$
                 <span class="text-red-800 line-through">{{ $product->oldprice }}$</span>
             </p>
+            <p> Total Products : {{ $product->product_nbr }}</p>
             <!-- Add other product details here -->
             <div class="flex p-1 gap-1 text-orange-300">
                 <ion-icon name="star"></ion-icon>

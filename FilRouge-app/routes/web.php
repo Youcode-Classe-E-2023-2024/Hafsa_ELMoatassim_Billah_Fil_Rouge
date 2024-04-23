@@ -78,10 +78,10 @@ Route::post('Blogs/{id}', [BlogsController::class,'updateBlog']);
 
 // Auth
 Route::get('/login', [LoginController::class,'login']);
-Route::post('/login', [LoginController::class,'store']);
+Route::post('/login', [LoginController::class,'store'])->name('login.store');
 Route::get('/register', [RegisterController::class, 'register']);
 Route::post('/register', [RegisterController::class, 'store']);
-Route::post('/logout', [LogoutController::class, 'destroy']);
+Route::post('/logout', [LogoutController::class, 'logout'])->name('logout');
 
 // Password Forgot
 Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');

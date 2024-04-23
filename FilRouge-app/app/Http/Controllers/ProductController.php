@@ -54,6 +54,7 @@ class ProductController extends Controller
         }
     }
 
+
     public function showProducts()
     {
         $categories = Category::all();
