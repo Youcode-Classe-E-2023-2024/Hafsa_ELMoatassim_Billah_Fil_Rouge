@@ -64,7 +64,7 @@
             <img src="{{ asset('./assets/images/sulfat free.png') }}" class="p-3" alt="">
         </div>
     </div>
-    <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-12"
+    <img src="{{ asset('./assets/images/middle pic.png') }}" class="absolute w-2/4 inset-0 m-auto pt-7"
          alt="Your Image">
 </section>
 
@@ -79,30 +79,30 @@
 
 <div class="flex gap-5 justify-center items-center">
     <div class="w-36 h-65">
-        <img
+        <a href="/blog1"><img
                 class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
 
-                src="{{ asset('./assets/images/pic1.png') }}" alt=""/>
+                src="{{ asset('./assets/images/pic1.png') }}" alt=""/></a>
     </div>
     <div class="w-60 h-70">
-        <img
+        <a href="/blog2"><img
                 class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
-                src="{{ asset('./assets/images/pic2.png') }}" alt=""/>
+                src="{{ asset('./assets/images/pic2.png') }}" alt=""/></a>
     </div>
     <div class="w-80 h-90">
-        <img
+        <a href="/blog3"><img
                 class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full object-cover rounded-t-full"
-                src="{{ asset('./assets/images/pic5.png') }}" alt=""/>
+                src="{{ asset('./assets/images/pic5.png') }}" alt=""/></a>
     </div>
     <div class="w-60 h-70">
-        <img
+        <a href="/blog4"><img
                 class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
-                src="{{ asset('./assets/images/pic3.png') }}" alt=""/>
+                src="{{ asset('./assets/images/pic3.png') }}" alt=""/></a>
     </div>
     <div class="w-36 h-65">
-        <img
+        <a href="/blog5"><img
                 class="rounded-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all transform duration-500 w-full  object-cover rounded-t-full"
-                src="{{ asset('./assets/images/pic4.png') }}" alt=""/>
+                src="{{ asset('./assets/images/pic4.png') }}" alt=""/></a>
     </div>
 </div>
 
