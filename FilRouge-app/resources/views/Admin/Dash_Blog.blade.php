@@ -3,12 +3,10 @@
 @include('Partials.layout')
 <div>
     @include('Partials.dashnav')
-
     <main class="flex-1 overflow-x-hidden overflow-y-auto" style="background-color: #d4e6c8;">
         <div class="container px-6 py-8 mx-auto">
             <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-                    class="block text-white mb-7 mr-5 bg-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                    type="button">
+                    class="block text-white mb-7 mr-5 bg-green-900 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800" type="button">
                 Add a Blog
             </button>
 
@@ -72,19 +70,16 @@
                 </div>
             </div>
 
-
             <div class="relative pt-2 lg:pt-2 min-h-screen">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-center px-2 mx-auto">
                     @foreach($blogs as $blog)
-
                       <article
                         class="bg-green-50  p-6 mb-6 shadow transition duration-300 group transform hover:-translate-y-2 hover:shadow-2xl rounded-2xl cursor-pointer border">
                         <div class="relative mb-4 rounded-2xl">
-                            <img
-                                class="max-h-80 rounded-2xl w-full object-cover transition-transform duration-300 transform group-hover:scale-105"
+                            <img class="max-h-80 rounded-2xl w-full object-cover transition-transform duration-300 transform group-hover:scale-105"
                                 src="{{ asset('storage/' . $blog->picture) }}" alt="blog">
                             <a class="flex justify-center items-center bg-green-700 bg-opacity-80 z-10 absolute top-0 left-0 w-full h-full text-white rounded-2xl opacity-0 transition-all duration-300 transform group-hover:scale-105 text-xl group-hover:opacity-100"
-                               href="#" target="_self" rel="noopener noreferrer">
+                               href="/Blog_Description/{{ $blog->id }}" target="_self" rel="noopener noreferrer">
                                 Read Blog
                             </a>
                         </div>
@@ -106,7 +101,6 @@
                                 Update
                             </button>
                     </article>
-
                         <div id="update_blog-{{$blog->id}}" tabindex="-1" aria-hidden="true"
                              class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
                             <div class="relative p-4 w-full max-w-md max-h-full">
@@ -157,15 +151,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                     @endforeach
-
-
                 </div>
             </div>
-
         </div>
     </main>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
