@@ -7,7 +7,7 @@
             <h3 class="text-3xl font-medium text-green-900 mb-5">Dashboard</h3>
             <section class="text-gray-600 body-font">
                 <div class="container px-5 mx-auto">
-                    <div class="grid grid-cols-4 -m-4 text-center">
+                    <div class="grid grid-cols-3 -m-4 text-center">
                         <div class="p-4">
                             <a href="/dashboard"><div class="bg-green-900 rounded-lg p-2 xl:p-6">
                                 <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">{{ $totalUsers }}</h2>
@@ -25,12 +25,6 @@
                                 <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">{{ $totalContacts }}</h2>
                                 <p class="leading-relaxed text-gray-100 font-bold">Contact Form</p>
                             </div></a>
-                        </div>
-                        <div class="p-4">
-                            <div class="bg-green-900 rounded-lg p-2 xl:p-6">
-                                <h2 class="title-font font-medium sm:text-4xl text-3xl text-white">4</h2>
-                                <p class="leading-relaxed text-gray-100 font-bold">Subscribers</p>
-                            </div>
                         </div>
                     </div>
                 </div>

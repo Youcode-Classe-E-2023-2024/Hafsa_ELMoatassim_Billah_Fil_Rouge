@@ -13,20 +13,13 @@ class DashboardController extends Controller
     public function index()
     {
         $bannedUsers = User::where('deleted', 1)->get();
-        $activeUsers = User::where('deleted', 0)->get();
+        $activeUsers = User::where('deleted', 0)->where('role', '!=', 1)->get();
         $totalUsers = User::count();
         $totalProducts = Product::count();
-        $totalContacts = Contact::count();
+        $totalContacts = Contact::where('status', 'not treated')->count();
         return view('Admin.dashboard', ['bannedUsers' => $bannedUsers, 'activeUsers' => $activeUsers, 'totalUsers' => $totalUsers, 'totalProducts' => $totalProducts, 'totalContacts' => $totalContacts ]);
     }
 
-//    public function banUser(User $user)
-//    {
-//        $user->deleted = 1;
-//        $user->save();
-//
-//        return redirect()->route('dashboard')->with('success', 'User banned successfully.');
-//    }
 
     public function banUser(User $user)
     {

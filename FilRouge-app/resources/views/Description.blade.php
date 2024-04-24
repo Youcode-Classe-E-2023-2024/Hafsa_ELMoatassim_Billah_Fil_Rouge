@@ -18,7 +18,7 @@
 
 @include('Partials.nav')
 
-<div class="flex flex-col justify-center my-20">
+<div class="flex flex-col justify-center my-10">
     <div class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl p-3 max-w-xs md:max-w-3xl mx-auto">
         <div class="w-full grid place-items-center">
             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="shadow-lg rounded-xl"/>
@@ -64,13 +64,12 @@
                     </button>
                 </div>
             </form>
-
         </div>
     </div>
 </div>
 
 <div class="flex items-center">
-    <div class="border-t border-gray-400 my-20 flex-grow"></div>
+    <div class="border-t border-gray-400 my-10 flex-grow"></div>
     <div class="mx-4 text-green-900 font-regular leading-none"><u>Product Description</u></div>
     <div class="border-t border-gray-400 flex-grow"></div>
 </div>

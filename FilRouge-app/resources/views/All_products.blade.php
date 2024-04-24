@@ -3,9 +3,9 @@
 @include('Partials.nav')
 @include('Partials.SearchBar')
 
-<h2 class="w-full text-center text-3xl text-green-900 dark:text-white font-semibold">Gamme Hazel</h2>
+{{--<h2 class="w-full text-center text-3xl text-green-900 dark:text-white font-semibold">Gamme Hazel</h2>--}}
 
-<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray- py-6 sm:py-12">
+<div class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-gray py-6 sm:py-3">
     <div class="mx-auto max-w-screen-xl px-4 w-full">
         <div class="grid w-full sm:grid-cols-3 xl:grid-cols-3 gap-6">
 
