@@ -39,27 +39,32 @@
                 <ion-icon name="star-half"></ion-icon>
             </div>
             <div class="h-5"></div>
-            <div class="flex">
-                <div class="flex flex-col custom-number-input h-10 w-32">
-                    <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent">
-                        <button data-action="decrement"
-                                class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-10 rounded-l cursor-pointer outline-none">
-                            <span class="m-auto text-2xl font-thin">−</span>
-                        </button>
-                        <input type="number"
-                               class="outline-none focus:outline-none text-center w-12 bg-gray-300 font-semibold text-md hover:text-black focus:text-black cursor-default flex items-center text-gray-700"
-                               name="custom-input-number" value="0">
-                        <button data-action="increment"
-                                class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-10 rounded-r cursor-pointer">
-                            <span class="m-auto text-2xl font-thin">+</span>
-                        </button>
+            <form action="{{ route('add.to.bag') }}" method="POST">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <div class="flex">
+                    <div class="flex flex-col custom-number-input h-10 w-32">
+                        <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent">
+                            <button type="button" data-action="decrement"
+                                    class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-10 rounded-l cursor-pointer outline-none">
+                                <span class="m-auto text-2xl font-thin">−</span>
+                            </button>
+                            <input type="number"
+                                   class="outline-none focus:outline-none text-center w-12 bg-gray-300 font-semibold text-md hover:text-black focus:text-black cursor-default flex items-center text-gray-700"
+                                   name="quantity" value="1" min="1">
+                            <button type="button" data-action="increment"
+                                    class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-10 rounded-r cursor-pointer">
+                                <span class="m-auto text-2xl font-thin">+</span>
+                            </button>
+                        </div>
                     </div>
+                    <button type="submit"
+                            class="ml-4 h-10 focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 ">
+                        Add to Bag
+                    </button>
                 </div>
-                <button type="button"
-                        class="ml-4 h-10 focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5 ">
-                    Add to Bag
-                </button>
-            </div>
+            </form>
+
         </div>
     </div>
 </div>
@@ -83,8 +88,10 @@
         );
         const target = btn.nextElementSibling;
         let value = Number(target.value);
-        value--;
-        target.value = value;
+        if (value > 1) {
+            value--;
+            target.value = value;
+        }
     }
 
     function increment(e) {

@@ -56,6 +56,7 @@ Route::get('/Description/{id}', [ProductController::class, 'showProductDescripti
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
+Route::post('/add-to-bag', [ProductController::class,'addToBag'])->name('add.to.bag');
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
