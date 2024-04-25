@@ -1,3 +1,7 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+
 @include('Partials.layout')
 @include('Partials.Top_Bar')
 
@@ -6,10 +10,19 @@
 <!-- component -->
 <main class="w-screen mt-10 flex justify-center items-center dark:bg-gray-900">
     <div class="max-w-7xl dark:bg-gray-950 dark:text-white">
-        <form class="w-full bg-white p-4 rounded shadow-md" action="/submit-comment" method="post">
+        <form class="w-full bg-white p-4 rounded shadow-md" action="{{ route('submit.comment') }}" method="post">
+            @csrf
             <h2 class="text-xl mb-4 tracking-wider font-lighter text-gray-900 dark:text-gray-200">Leave a Comment</h2>
-            <p class="text-gray-600 mb-4">Your email address will not be published. Required fields are marked *</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="mb-4">
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="w-full bg-green-50 px-3 py-2 dark:bg-gray-900 rounded-sm border dark:border-none border-gray-300 focus:outline-none border-solid focus:border-dashed"
+                        placeholder="Users Name*"
+                        required/>
+                </div>
                 <div class="mb-4 col-span-1 md:col-span-3">
                   <textarea
                       id="comment"
@@ -19,37 +32,10 @@
                       rows="5" required>
                   </textarea>
                 </div>
-
-                <div class="mb-4">
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="w-full bg-green-50 px-3 py-2 dark:bg-gray-900 rounded-sm border dark:border-none border-gray-300 focus:outline-none border-solid focus:border-dashed"
-                        placeholder="Name*"
-                        required/>
+                <div class="mb-4 col-span-1 md:col-span-3">
+                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="multiple_files" type="file" multiple>
                 </div>
-
-                <div class="mb-4">
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        class="w-full bg-green-50 px-3 py-2 dark:bg-gray-900 rounded-sm border dark:border-none border-gray-300 focus:outline-none border-solid focus:border-dashed"
-                        placeholder="Email*"
-                        required/>
-                </div>
-
-                <div class="mb-4">
-                    <input
-                        type="text"
-                        id="website"
-                        name="website"
-                        class="w-full bg-green-50 px-3 py-2 dark:bg-gray-900 rounded-sm border dark:border-none border-gray-300 focus:outline-none border-solid focus:border-dashed"
-                        placeholder="Website"/>
-                </div>
-
-            </div>
+     </div>
             <div class="flex justify-end">
                 <button
                     type="submit"

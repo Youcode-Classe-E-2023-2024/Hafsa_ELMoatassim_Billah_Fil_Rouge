@@ -1,5 +1,4 @@
 @include('Partials.layout')
-<!-- component -->
 <div class="h-20"></div>
 <footer class="mt-20 bg-green-950 bg-opacity-75">
     <div class="container px-6 py-12 mx-auto">
@@ -7,21 +6,28 @@
             <div class="sm:col-span-2">
                 <h1 class="max-w-lg text-xl font-semibold tracking-tight text-white xl:text-2xl dark:text-white">
                     Join the Hazel Squad to get update.</h1>
-                <form action="/subscribe" method="post">
+{{--                <form action="/subscribe" method="post">--}}
+{{--                    @csrf--}}
+{{--                    <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row pr-10">--}}
+{{--                        <input type="text" id="email" name="email" class=" text-gray-600  w-2/3  p-2  rounded-l-lg"--}}
+{{--                               placeholder="Email Adress"/>--}}
+{{--                        <button class=" p-2  w-1/3  bg-green-400  rounded-r-lg  text-white hover: bg-green-400"--}}
+{{--                                type="submit">Subscribe--}}
+{{--                        </button>--}}
+{{--                    </div>--}}
+{{--                </form>--}}
+                <form action="/subscribe" method="post"
+                    class="w-full max-w-md lg:col-span-5 lg:pt-2">
                     @csrf
-                    <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row pr-10">
-                        <input type="text" id="email" name="email" class=" text-gray-600  w-2/3  p-2  rounded-l-lg"
-                               placeholder="Email Adress"/>
-                        <button class=" p-2  w-1/3  bg-green-400  rounded-r-lg  text-white hover: bg-green-400"
-                                type="submit">Subscribe
-                        </button>
+                    <div class="gap-x-4 flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row pr-10">
+                        <label for="email-address" class="sr-only">Email address</label>
+                        <input type="text" id="email" name="email" autocomplete="email" required class="min-w-0 flex-auto rounded-md border-0 bg-white/10 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-white/75 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm sm:leading-6" placeholder="Enter your email">
+                        <button type="submit" class="flex-none rounded-md bg-green-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Subscribe</button>
                     </div>
                 </form>
             </div>
-
             <div>
                 <p class="font-semibold text-white dark:text-white">Quick Link</p>
-
                 <div class="flex flex-col items-start mt-5 space-y-2">
                     <a href="/"
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">Home</a>

@@ -3,16 +3,17 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ForgotPasswordLinkController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactAdminController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ProductController;
-use App\Models\Newsletter;
+use App\Http\Controllers\ReviewsController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -21,6 +22,9 @@ Route::get('/', function ()
 
 Route::get('/Card', function ()
 {return view('Card');});
+
+Route::get('/unsubscribe', function ()
+{return view('unsubscribe');});
 
 Route::get('/reviews', function ()
 {return view('reviews');});
@@ -59,7 +63,7 @@ Route::get('/Description/{id}', [ProductController::class, 'showProductDescripti
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
-Route::post('/add-to-bag', [ProductController::class,'addToBag'])->name('add.to.bag');
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
@@ -74,6 +78,10 @@ Route::post('/contact', [ContactAdminController::class, 'contact'])->name('conta
 
 // Subscriber routes
 Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
+Route::post('/unsubscribe{user_id}', [NewsletterController::class,'unsubscribe'])->name('unsubscribe');
+
+Route::post('/submit-comment', [ReviewsController::class, 'submitComment'])->name('submit.comment');
+
 
 // Blogs routes
 Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');

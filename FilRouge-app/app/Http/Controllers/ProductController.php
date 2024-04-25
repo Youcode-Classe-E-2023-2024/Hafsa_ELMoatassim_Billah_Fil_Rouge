@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\NewsProduct;
+use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Newsletter;
 use App\Models\Product;
@@ -53,29 +54,15 @@ class ProductController extends Controller
             }
         }
     }
-
-    public function addToBag(Request $request)
-    {
-        $request->validate([
-            'product_id' => 'required|exists:products,id',
-            'quantity' => 'required|numeric|min:1',
-        ]);
-
-        $product = Product::findOrFail($request->product_id);
-
-        if ($product->product_nbr >= $request->quantity) {
-            $product->product_nbr -= $request->quantity;
-            $product->save();
-
-            // Process adding to bag here
-            // For example, you can store the product ID and quantity in the session
-
-            return redirect()->back()->with('success', 'Product added to bag successfully.');
-        } else {
-            return redirect()->back()->with('error', 'Not enough quantity available.');
-        }
-    }
-
+//    public function addToBag(Request $request)
+//    {
+//        $request->validate([
+//            'product_id' => 'required|exists:products,id',
+//            'quantity' => 'required|numeric|min:1',
+//        ]);
+//
+//        return redirect()->back()->with('success', 'Product added to bag successfully.');
+//    }
 
 
 
