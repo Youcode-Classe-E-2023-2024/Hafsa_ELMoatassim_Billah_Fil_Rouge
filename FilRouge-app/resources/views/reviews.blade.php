@@ -10,7 +10,7 @@
 <!-- component -->
 <main class="w-screen mt-10 flex justify-center items-center dark:bg-gray-900">
     <div class="max-w-7xl dark:bg-gray-950 dark:text-white">
-        <form class="w-full bg-white p-4 rounded shadow-md" action="{{ route('submit.comment') }}" method="post">
+        <form class="w-full bg-white p-4 rounded shadow-md" action="{{ route('submit.comment') }}" method="post" enctype="multipart/form-data">
             @csrf
             <h2 class="text-xl mb-4 tracking-wider font-lighter text-gray-900 dark:text-gray-200">Leave a Comment</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -33,7 +33,8 @@
                   </textarea>
                 </div>
                 <div class="mb-4 col-span-1 md:col-span-3">
-                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="multiple_files" type="file" multiple>
+                  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                         id="multiple_files" type="file" multiple>
                 </div>
      </div>
             <div class="flex justify-end">

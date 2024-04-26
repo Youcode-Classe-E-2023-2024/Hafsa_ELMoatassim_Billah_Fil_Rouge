@@ -15,7 +15,7 @@
         {{--        <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">--}}
         {{--            Login--}}
         {{--        </button>--}}
-        <a href="/Card">
+        <a href="/Cart">
             <div class="flex flex-row-reverse ml-2 w-full">
                 <div slot="icon" class="relative">
                     <div

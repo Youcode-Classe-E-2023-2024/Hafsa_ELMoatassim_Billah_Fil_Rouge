@@ -54,16 +54,6 @@ class ProductController extends Controller
             }
         }
     }
-//    public function addToBag(Request $request)
-//    {
-//        $request->validate([
-//            'product_id' => 'required|exists:products,id',
-//            'quantity' => 'required|numeric|min:1',
-//        ]);
-//
-//        return redirect()->back()->with('success', 'Product added to bag successfully.');
-//    }
-
 
 
     public function showProducts()
