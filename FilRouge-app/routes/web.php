@@ -76,9 +76,12 @@ Route::post('/Contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/Dash_Contact', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('/contact', [ContactAdminController::class, 'contact'])->name('contact');
 
+//test
+Route::get('/test', [ProductController::class, 'test']);
 // Subscriber routes
 Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
-Route::post('/unsubscribe{user_id}', [NewsletterController::class,'unsubscribe'])->name('unsubscribe');
+Route::get('/unsubscribe/{email}', [NewsletterController::class,'unsubscribe']);
+Route::get('/unsubscribe', [NewsletterController::class,'showUnsubscribeForm'])->name('Admin.Dashboard');
 
 Route::post('/submit-comment', [ReviewsController::class, 'submitComment'])->name('submit.comment');
 

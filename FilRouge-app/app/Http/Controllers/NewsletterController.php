@@ -18,20 +18,29 @@ class NewsletterController extends Controller
         return redirect()->back()->with('message', 'Subscribed successfully');
     }
 
-    public function unsubscribe($user_id)
+    public function showUnsubscribeForm($id)
     {
-        $user = User::find($user_id);
+        $user = Newsletter::find($id);
 
         if (!$user) {
             abort(404);
         }
 
-        $user->update(['subscribed' => false]);
-
-        return view('unsubscribe_success', ['user' => $user]);
+        return view('Admin.Dashboard', ['user' => $user]);
     }
 
 
+    public function unsubscribe($email)
+    {
+        $subscriber = Newsletter::where('email', $email)->first();
 
+        if (!$subscriber) {
+            abort(404);
+        }
+
+        $subscriber->update(['subscribed' => 0]);
+
+        return view('unsubscribe_success', ['email' => $email]);
+    }
 
 }

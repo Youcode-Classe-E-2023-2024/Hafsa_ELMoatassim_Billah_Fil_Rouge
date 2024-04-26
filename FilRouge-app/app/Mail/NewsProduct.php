@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -11,10 +10,12 @@ class NewsProduct extends Mailable
     use Queueable, SerializesModels;
 
     private $user;
+    private $email;
 
-    public function __construct($user)
+    public function __construct($user, $email)
     {
         $this->user = $user;
+        $this->email = $email;
     }
 
     /**
@@ -25,6 +26,7 @@ class NewsProduct extends Mailable
     public function build()
     {
         return $this->view('emails.product_news')
-            ->subject('Nouveau Produit est ajouté a la liste!');
+            ->subject('Nouveau Produit est ajouté a la liste!')
+            ->with(['email' => $this->email]);
     }
 }
