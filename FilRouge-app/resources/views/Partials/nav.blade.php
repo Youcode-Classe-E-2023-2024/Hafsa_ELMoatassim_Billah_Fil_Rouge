@@ -15,7 +15,7 @@
         {{--        <button class="bg-green-700 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full">--}}
         {{--            Login--}}
         {{--        </button>--}}
-        <a href="/cart">
+        <a href="/Card">
             <div class="flex flex-row-reverse ml-2 w-full">
                 <div slot="icon" class="relative">
                     <div
@@ -49,13 +49,4 @@
 </nav>
 </div>
 
-{{--<script>--}}
-{{--    const cartCountElement = document.querySelector('.cart-count');--}}
-{{--    function updateCartCount() {--}}
-{{--        fetch('/cart/count')--}}
-{{--            .then(response => response.json())--}}
-{{--            .then(data => {--}}
-{{--                console.log(data)--}}
-{{--                cartCountElement.innerText = data.count;--}}
-{{--            });--}}
-{{--    }</script>--}}
+

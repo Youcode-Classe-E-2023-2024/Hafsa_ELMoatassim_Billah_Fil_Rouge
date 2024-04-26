@@ -30,7 +30,15 @@ class CartController extends Controller
         }
 
         $cartCount = Cart::where('user_id', $userId)->count();
-//        return response()->json(['count' => $cartCount]);
         return back()->with('cartCount', $cartCount);
     }
+
+    public function showCart()
+    {
+        $userId = auth()->id();
+        $cartItems = Cart::where('user_id', $userId)->with('product')->get();
+
+        return view('Card', compact('cartItems'));
+    }
+
 }

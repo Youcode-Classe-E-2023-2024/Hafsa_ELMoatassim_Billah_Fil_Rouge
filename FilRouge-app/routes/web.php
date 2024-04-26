@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function ()
 {return view('Home');});
 
-Route::get('/Card', function ()
-{return view('Card');});
+//Route::get('/Card', function ()
+//{return view('Card');});
 
 Route::get('/unsubscribe', function ()
 {return view('unsubscribe');});
@@ -63,8 +63,12 @@ Route::get('/Description/{id}', [ProductController::class, 'showProductDescripti
 Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
+
+// Cart routes
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
+Route::get('/Card', [CartController::class,'showCart'])->name('Card');
+
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
@@ -83,7 +87,6 @@ Route::get('/unsubscribe/{email}', [NewsletterController::class,'unsubscribe']);
 Route::get('/unsubscribe', [NewsletterController::class,'showUnsubscribeForm'])->name('Admin.Dashboard');
 
 Route::post('/submit-comment', [ReviewsController::class, 'submitComment'])->name('submit.comment');
-
 
 // Blogs routes
 Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');

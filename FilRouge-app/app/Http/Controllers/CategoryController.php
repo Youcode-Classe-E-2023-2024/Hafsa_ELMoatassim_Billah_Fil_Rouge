@@ -26,29 +26,6 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 
-    /**
-     * Display a listing of the resource.
-     */
-
-
-//    public function showCategories()
-//    {
-//        $categories = Category::all();
-////        $products = Product::all();
-//
-//        return view('Admin.Dash_Product', ['categories' => $categories, 'products' => $products]);
-//    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-//    public function destroyCategory($id)
-//    {
-//        $category = Category::findOrFail($id);
-//        $category->delete();
-//
-//        return redirect()->back();
-//    }
 
     public function destroy(Category $category)
     {
