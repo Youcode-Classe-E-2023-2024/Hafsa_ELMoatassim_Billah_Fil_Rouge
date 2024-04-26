@@ -63,3 +63,26 @@
     </div>
 
 @include('Partials.footer')
+
+    <script>
+        document.querySelector('.add-to-cart-button').addEventListener('click', () => {
+            addToCart()
+                .then(() => {
+                    updateCartCount();
+                });
+        });
+
+        function addToCart() {
+            return fetch('/cart/add', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                },
+                body: JSON.stringify({
+                    product_id: 1,
+                    quantity: 1
+                })
+            });
+        }
+    </script>

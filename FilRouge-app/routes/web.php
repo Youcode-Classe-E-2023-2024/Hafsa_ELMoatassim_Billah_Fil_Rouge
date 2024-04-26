@@ -64,6 +64,7 @@ Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name(
 Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::post('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
@@ -76,8 +77,6 @@ Route::post('/Contact', [ContactController::class, 'store'])->name('contact.stor
 Route::get('/Dash_Contact', [ContactController::class, 'index'])->name('contacts.index');
 Route::post('/contact', [ContactAdminController::class, 'contact'])->name('contact');
 
-//test
-Route::get('/test', [ProductController::class, 'test']);
 // Subscriber routes
 Route::post('/subscribe', [NewsletterController::class, 'subscribe']);
 Route::get('/unsubscribe/{email}', [NewsletterController::class,'unsubscribe']);
@@ -88,7 +87,7 @@ Route::post('/submit-comment', [ReviewsController::class, 'submitComment'])->nam
 
 // Blogs routes
 Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');
-Route::get('/Dash_Blog', [BlogsController::class, 'showBlogs'])->name('blogs.show');
+Route::get('/Dash_Blog', [BlogsController::class, 'showBlogs'])->name('dash.blogs.show');
 Route::delete('blogs/{id}', [BlogsController::class, 'deleteBlog'])->name('deleteBlog');
 Route::get('/Blog', [BlogsController::class, 'showBlog'])->name('blogs.show');
 Route::get('/Blog_Description/{id}', [BlogsController::class, 'showBlogDescription'])->name('Blog_Description');

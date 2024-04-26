@@ -1,5 +1,4 @@
 @include('Partials.layout')
-
 <div class="pt-5 w-full text-xs flex justify-around items-center">
     <div class="flex">
         <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
@@ -19,8 +18,9 @@
         <a href="/cart">
             <div class="flex flex-row-reverse ml-2 w-full">
                 <div slot="icon" class="relative">
-                    <div class="absolute text-xs rounded-full -mt-1 -mr-2 px-1 font-bold top-0 right-0 bg-red-700 text-white cart-count">
-                        {{ session('cartCount') ?? '0' }}
+                    <div
+                        class="absolute text-xs rounded-full -mt-1 -mr-2 px-1 font-bold top-0 right-0 bg-red-700 text-white cart-count">
+                        {{getCartCount()}}
                     </div>
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24"
@@ -49,35 +49,13 @@
 </nav>
 </div>
 
-<script>
-    const cartCountElement = document.querySelector('.cart-count');
-
-    function updateCartCount() {
-        fetch('/cart/count')
-            .then(response => response.json())
-            .then(data => {
-                cartCountElement.innerText = data.count;
-            });
-    }
-
-    document.querySelector('.add-to-cart-button').addEventListener('click', () => {
-        addToCart()
-            .then(() => {
-                updateCartCount();
-            });
-    });
-
-    function addToCart() {
-        return fetch('/cart/add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-            },
-            body: JSON.stringify({
-                product_id: 1,
-                quantity: 1
-            })
-        });
-    }
-</script>
+{{--<script>--}}
+{{--    const cartCountElement = document.querySelector('.cart-count');--}}
+{{--    function updateCartCount() {--}}
+{{--        fetch('/cart/count')--}}
+{{--            .then(response => response.json())--}}
+{{--            .then(data => {--}}
+{{--                console.log(data)--}}
+{{--                cartCountElement.innerText = data.count;--}}
+{{--            });--}}
+{{--    }</script>--}}
