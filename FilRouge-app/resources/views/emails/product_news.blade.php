@@ -423,9 +423,10 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
+{{--                                                            @dd($email)--}}
                                                             <td align="center" bgcolor="transparent" esd-links-color="#333333" class="esd-block-text es-p15b">
                                                                 <p style="font-size: 12px;"><u><b>
-                                                                            <a href="http://127.0.0.1:8000/unsubscribe" style="color: #333333;">unsubscribe</a>
+                                                                            <a href="http://127.0.0.1:8000/unsubscribe/{{$email}}" style="color: #333333;">unsubscribe</a>
                                                                         </b></u></p>
                                                             </td>
                                                         </tr>

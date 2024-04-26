@@ -50,7 +50,7 @@ class ProductController extends Controller
 
         if ($subscribers) {
             foreach ($subscribers as $subscriber) {
-                Mail::to($subscriber->email)->send(new NewsProduct($user));
+                Mail::to($subscriber->email)->send(new NewsProduct($user, $subscriber->email));
             }
         }
     }
@@ -112,6 +112,10 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'Product updated successfully.');
     }
+    public function test()
+        {
+            return view('emails.product_news');
+        }
 
 
 
