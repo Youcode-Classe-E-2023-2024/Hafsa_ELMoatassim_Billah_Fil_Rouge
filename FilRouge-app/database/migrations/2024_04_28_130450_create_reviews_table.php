@@ -13,19 +13,18 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->foreignId('product_id')->constrained()->onDelete('cascade');
-            $table->string('user_name');
-            $table->string('user_image')->nullable();
+            $table->string('name');
             $table->text('comment');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
 
+
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('reviews');
     }
