@@ -32,10 +32,9 @@
                       rows="5" required>
                   </textarea>
                 </div>
-                <div>hello</div>
                 <div class="mb-4 col-span-1 md:col-span-3">
                   <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                         id="multiple_files" type="file" multiple>
+                         name="image" id="multiple_files" type="file" multiple>
                 </div>
      </div>
             <div class="flex justify-end">
@@ -48,3 +47,4 @@
         </form>
     </div>
 </main>
+
