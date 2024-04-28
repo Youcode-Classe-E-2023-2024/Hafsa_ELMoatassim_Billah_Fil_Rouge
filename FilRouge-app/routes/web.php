@@ -45,6 +45,7 @@ Route::get('/blog4', function () {return view('BLOG.blog4');});
 Route::get('/blog5', function () {return view('BLOG.blog5');});
 
 
+
 // Dashboard routes
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -64,7 +65,7 @@ Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-p
 // Cart routes
 Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
 Route::post('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
-Route::get('/Cart', [CartController::class,'showCart'])->name('Cart');
+Route::get('/Card', [CartController::class,'showCart']);
 
 // Category routes
 Route::post('/categories', [CategoryController::class, 'store'])->name('add.category');
