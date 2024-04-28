@@ -38,12 +38,12 @@ Route::get('/Blog', function ()
 Route::get('/Dash_Contact', function ()
 {return view('Admin.Dash_Contact');});
 
+
 Route::get('/blog1', function () {return view('BLOG.blog1');});
 Route::get('/blog2', function () {return view('BLOG.blog2');});
 Route::get('/blog3', function () {return view('BLOG.blog3');});
 Route::get('/blog4', function () {return view('BLOG.blog4');});
 Route::get('/blog5', function () {return view('BLOG.blog5');});
-
 
 
 // Dashboard routes
@@ -85,6 +85,8 @@ Route::get('/unsubscribe', [NewsletterController::class,'showUnsubscribeForm'])-
 
 // Review routes
 Route::post('/submit-comment', [ReviewsController::class, 'submitComment'])->name('submit.comment');
+Route::get('/reviews', [ReviewsController::class, 'showReviews'])->name('reviews');
+
 
 // Blogs routes
 Route::post('/blogs', [BlogsController::class, 'addBlog'])->name('blogs.add');

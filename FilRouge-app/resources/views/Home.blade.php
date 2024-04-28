@@ -293,5 +293,24 @@
         </div>
     </div>
 </section>
+
+{{--    <div class="max-w-screen md:w-3/4 mx-auto">--}}
+{{--        @foreach ($reviews as $review)--}}
+{{--            <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-200 rounded-xl space-x-10">--}}
+{{--                <div class="w-2/3">--}}
+{{--                    <p class="w-full text-2xl font-semibold">{{ $review->name }}</p>--}}
+{{--                    <p class="w-full pb-8 text-sm tracking-wide leading-tight">{{ $review->comment }}</p>--}}
+{{--                </div>--}}
+{{--                <div class="w-auto h-">--}}
+{{--                    @if ($review->image)--}}
+{{--                        <img class="flex-1 h-full rounded-lg" src="{{ asset('storage/' . $review->image) }}" />--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        @endforeach--}}
+{{--    </div>--}}
+
+
+
 @include('Partials.footer')
 

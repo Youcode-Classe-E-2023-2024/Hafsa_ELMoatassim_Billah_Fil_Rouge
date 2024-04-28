@@ -6,16 +6,6 @@
             <div class="sm:col-span-2">
                 <h1 class="max-w-lg text-xl font-semibold tracking-tight text-white xl:text-2xl dark:text-white">
                     Join the Hazel Squad to get update.</h1>
-{{--                <form action="/subscribe" method="post">--}}
-{{--                    @csrf--}}
-{{--                    <div class="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row pr-10">--}}
-{{--                        <input type="text" id="email" name="email" class=" text-gray-600  w-2/3  p-2  rounded-l-lg"--}}
-{{--                               placeholder="Email Adress"/>--}}
-{{--                        <button class=" p-2  w-1/3  bg-green-400  rounded-r-lg  text-white hover: bg-green-400"--}}
-{{--                                type="submit">Subscribe--}}
-{{--                        </button>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
                 <form action="/subscribe" method="post"
                     class="w-full max-w-md lg:col-span-5 lg:pt-2">
                     @csrf

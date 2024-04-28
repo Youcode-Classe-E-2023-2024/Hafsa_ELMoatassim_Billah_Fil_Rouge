@@ -31,6 +31,14 @@ class ReviewsController extends Controller
         return redirect()->back()->with('success', 'Your comment has been submitted successfully.');
     }
 
+    public function showReviews()
+    {
+        $reviews = Review::all();
+
+        return view('/', compact('reviews'));
+    }
+
+
 
 
 
