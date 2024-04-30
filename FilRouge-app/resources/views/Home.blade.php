@@ -35,7 +35,6 @@
                 <form method="POST" action="/logout">
                     @csrf
                     <button type="submit" class="no-underline text-black hover:text-green-800 px-4 py-2">Logout</button>
-
                 </form>
             @endauth
 

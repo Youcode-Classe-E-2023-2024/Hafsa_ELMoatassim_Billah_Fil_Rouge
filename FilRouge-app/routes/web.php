@@ -47,7 +47,9 @@ Route::middleware(['auth'])->group(function () {
     //====================={{Admin}}======================
 
     Route::middleware(['admin'])->group(function () {
+
         // Product routes
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::post('/Admin/Dash_Product', [ProductController::class, 'addProduct'])->name('Admin.Dash_Product');
         Route::get('/Dash_Product', [ProductController::class, 'showProductsAdmin']);
         Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
@@ -57,7 +59,6 @@ Route::middleware(['auth'])->group(function () {
             return view('Admin.Dash_Contact');
         });
 
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::delete('/dashboard/{user}', [DashboardController::class, 'banUser'])->name('ban.user');
         Route::patch('/Admin/dashboard/recover/{user}', [DashboardController::class, 'recoverUser'])->name('recover.user');
@@ -73,7 +74,6 @@ Route::middleware(['auth'])->group(function () {
 
     });
 
-
     //====================={{User}}======================
 
     Route::middleware(['user'])->group(function () {
@@ -88,6 +88,7 @@ Route::middleware(['auth'])->group(function () {
     });
 
 });
+
 
 
 Route::get('/All_products', [ProductController::class, 'showProducts']);
