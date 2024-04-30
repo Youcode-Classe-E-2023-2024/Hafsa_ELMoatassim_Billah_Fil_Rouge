@@ -48,4 +48,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Newsletter::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->role === 1;
+    }
+
+    public function isUser()
+    {
+        return $this->role === 2;
+    }
 }
