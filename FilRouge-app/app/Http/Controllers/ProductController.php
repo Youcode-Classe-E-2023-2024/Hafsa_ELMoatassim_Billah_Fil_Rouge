@@ -10,6 +10,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use App\Models\Review;
 
 class ProductController extends Controller
 {
@@ -80,8 +81,10 @@ class ProductController extends Controller
 
     public function showLast4Products()
     {
+        $reviews = Review::all();
+
         $products = Product::latest()->take(4)->get();
-        return view('Home', compact('products'));
+        return view('Home', compact('products', 'reviews'));
     }
 
     public function softDelete($id)
