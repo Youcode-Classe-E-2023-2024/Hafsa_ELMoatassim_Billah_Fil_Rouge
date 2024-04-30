@@ -1,4 +1,5 @@
 @include('Partials.layout')
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" />
 
 <section class="flex h-screen relative section1">
     <div class="absolute inset-0 flex items-center justify-center"
@@ -303,23 +304,25 @@
     </div>
 </section>
 
-    <div class="max-w-screen md:w-3/4 mx-auto">
+
+<h1 class="text-gray-700 text-3xl text-center mb-10 mt-10">Read Some Reviews:</h1>
+    <div class="flex">
         @foreach ($reviews as $review)
-            <div class="flex flex-row space-y-2 items-center justify-center h-full py-4 bg-gray-200 rounded-xl space-x-10">
-                <div class="w-2/3">
-                    <p class="w-full text-2xl font-semibold">{{ $review->name }}</p>
-                    <p class="w-full pb-8 text-sm tracking-wide leading-tight">{{ $review->comment }}</p>
+                <div class="m-auto">
+                    <div class="flex flex-col bg-white max-w-sm shadow-md py-8 px-10 md:px-8 rounded-md">
+                        <div class="flex flex-col md:flex-row gap-6 md:gap-8">
+                            @if ($review->image)
+                            <img class="rounded-full border-4 border-gray-300 h-24 w-24 mx-auto" src="{{ asset('storage/' . $review->image) }}" alt="" />
+                            @endif
+                            <div class="flex flex-col text-center md:text-left">
+                                <div class="font-medium text-lg text-gray-800">{{ $review->name }}</div>
+                                <div class="text-gray-500 mb-3 whitespace-nowrap">{{ $review->comment }}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="w-auto h-">
-                    @if ($review->image)
-                        <img class="flex-1 h-full rounded-lg" src="{{ asset('storage/' . $review->image) }}" />
-                    @endif
-                </div>
-            </div>
         @endforeach
     </div>
-
-
 
 @include('Partials.footer')
 
