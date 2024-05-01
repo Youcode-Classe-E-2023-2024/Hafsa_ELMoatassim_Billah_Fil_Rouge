@@ -9,10 +9,12 @@ class AdminMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user() && $request->user()->role === 1) {
+        if ($request->user()->role == '1') {
             return $next($request);
         }
+        else(
+            abort(403, 'Unauthorized. Only admin users are allowed to access this resource.')
+          );
 
-        abort(403, 'Unauthorized. Only admin users are allowed to access this resource.');
     }
 }
