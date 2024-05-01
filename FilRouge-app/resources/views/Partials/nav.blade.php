@@ -11,6 +11,10 @@
         <p class="ml-3 pt-1 text-gray-800 font-serif">Worldwide shipping</p>
     </div>
     <a href="/"><img class="pr-28" src="{{ asset('./assets/images/Logo.png') }}" alt="logo"></a>
+    @guest
+        <a href="/login">login</a>
+    @endguest
+    @auth()
     <div>
         <a href="/Cart">
             <div class="flex flex-row-reverse ml-2 w-full">
@@ -31,7 +35,7 @@
             </div>
         </a>
     </div>
-
+    @endauth
 </div>
 
 <nav id="bar" class="flex justify-center ">
