@@ -11,12 +11,17 @@ class NewsletterController extends Controller
 
     public function subscribe(Request $request)
     {
+        $request->validate([
+            'email' => 'required|email|unique:newsletters,email',
+        ]);
+
         $email = $request->input('email');
 
         Newsletter::create(['email' => $email]);
 
         return redirect()->back()->with('message', 'Subscribed successfully');
     }
+
 
     public function showUnsubscribeForm($id)
     {
