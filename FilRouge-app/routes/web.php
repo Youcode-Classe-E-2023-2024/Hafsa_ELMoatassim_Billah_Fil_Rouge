@@ -20,24 +20,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
 
+});
+
 // Auth
-    Route::get('/login', [LoginController::class, 'login']);
-    Route::post('/login', [LoginController::class, 'store'])->name('login.store');
-    Route::get('/register', [RegisterController::class, 'register']);
-    Route::post('/register', [RegisterController::class, 'store']);
+Route::get('/login', [LoginController::class, 'login']);
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+Route::get('/register', [RegisterController::class, 'register']);
+Route::post('/register', [RegisterController::class, 'store']);
 
 // Password Forgot
-    Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');
-    Route::post('/forgot-request', [ForgotPasswordLinkController::class, 'store']);
-    Route::post('/forgot-password', [ForgotPasswordController::class, 'reset'])->name('new_password');
+Route::get('/forgot-password', [ForgotPasswordLinkController::class, 'create'])->name('forgot-password');
+Route::post('/forgot-request', [ForgotPasswordLinkController::class, 'store']);
+Route::post('/forgot-password', [ForgotPasswordController::class, 'reset'])->name('new_password');
 
 // Password Reset
-    Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-    Route::get('password/reset/{token}', [ForgotPasswordController::class, 'showForm'])->name('password.reset');
-    Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
-
-});
+Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', [ForgotPasswordController::class, 'showForm'])->name('password.reset');
+Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
 
 
 Route::middleware(['auth'])->group(function () {
@@ -81,8 +81,7 @@ Route::middleware(['auth'])->group(function () {
         // Cart routes
         Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
         Route::post('/cart/count', [CartController::class, 'getCartCount'])->name('cart.count');
-        Route::get('/cart', [CartController::class, 'showCart']);
-
+        Route::get('/Cart', [CartController::class, 'showCart']);
         Route::post('/submit-comment', [ReviewsController::class, 'submitComment'])->name('submit.comment');
 
     });

@@ -9,10 +9,12 @@ class UserMiddleware
 {
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user() && $request->user()->isUser()) {
+        if ($request->user()->role == '2') {
             return $next($request);
         }
+        else{
+            abort(403, 'Unauthorized. Only users users are allowed to access this resource.');
+        }
 
-        abort(403, 'Unauthorized. Only users users are allowed to access this resource.');
     }
 }

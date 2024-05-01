@@ -14,7 +14,7 @@ class RegisterController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
      */
     public function register()
     {
@@ -25,7 +25,7 @@ class RegisterController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
@@ -42,12 +42,14 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => '2', // Set default role to 'user'
+            'role' => '2',
         ]);
+            if($user){
 
-        Auth::login($user);
+                return redirect('/login');
+            }
+//        Auth::login($user);
 
-        return redirect('/login');
     }
 
 
