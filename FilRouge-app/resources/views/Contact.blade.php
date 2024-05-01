@@ -1,7 +1,6 @@
 @include('Partials.layout')
 @include('Partials.Top_Bar')
 @include('Partials.nav')
-@include('Partials.SearchBar')
 
 
 <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">

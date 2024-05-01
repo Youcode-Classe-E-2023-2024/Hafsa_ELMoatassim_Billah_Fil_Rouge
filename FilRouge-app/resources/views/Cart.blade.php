@@ -25,8 +25,8 @@
                         alt="product-image" class="w-full rounded-lg sm:w-40"/>
                     <div class="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                         <div class="mt-5 sm:mt-0">
-                            <h2 class="text-lg font-bold text-gray-900">{{ $cartItem->product->title }}</h2>
-{{--                            <p class="mt-1 text-xs text-gray-700">{{ $cartItem->product->description }}</p>--}}
+                            <h2 class="text-lg font-bold text-gray-900">{{ $cartItem->product->title}}</h2>
+                            <p class="mt-1 text-xs text-gray-700" style="max-height: 35px; overflow-y: hidden;">{{ $cartItem->product->description }}</p>
                         </div>
                         <div class="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                             <div class="flex items-center border-gray-100">
@@ -38,7 +38,7 @@
                                     class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50"> + </span>
                             </div>
                             <div class="flex items-center space-x-4">
-                                <p class="text-sm">{{ $cartItem->product->price }} $</p>
+                                <p class="text-sm">{{ $cartItem->product->price }}$</p>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                      stroke-width="1.5"
                                      stroke="currentColor"

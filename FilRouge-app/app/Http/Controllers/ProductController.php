@@ -105,10 +105,14 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', 'Product updated successfully.');
     }
-    public function test()
-        {
-            return view('emails.product_news');
-        }
+//
+    public function search(Request $request)
+    {
+        $term = $request->input('term');
+        $products = Product::where('title', 'like', '%' . $term . '%')->get();
+
+        return view('Partials.search', compact('products'))->render();
+    }
 
 
 }

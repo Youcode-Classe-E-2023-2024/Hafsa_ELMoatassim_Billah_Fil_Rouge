@@ -20,8 +20,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['guest'])->group(function () {
 
-});
-
 // Auth
 Route::get('/login', [LoginController::class, 'login']);
 Route::post('/login', [LoginController::class, 'store'])->name('login.store');
@@ -38,6 +36,8 @@ Route::get('password/reset', 'App\Http\Controllers\Auth\ForgotPasswordController
 Route::post('password/email', 'App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', [ForgotPasswordController::class, 'showForm'])->name('password.reset');
 Route::post('password/reset', 'App\Http\Controllers\Auth\ResetPasswordController@reset')->name('password.update');
+});
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -93,6 +93,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/All_products', [ProductController::class, 'showProducts']);
 Route::get('/Description/{id}', [ProductController::class, 'showProductDescription'])->name('Description');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
+//Route::get('/search', [ProductController::class,'search'])->name('search');
+Route::get('/search', [ProductController::class, 'search']);
+//Route::post('/search', 'ProductController@search');
 
 
 Route::get('/unsubscribe', function () {
