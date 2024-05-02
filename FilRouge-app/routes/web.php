@@ -93,9 +93,10 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/All_products', [ProductController::class, 'showProducts']);
 Route::get('/Description/{id}', [ProductController::class, 'showProductDescription'])->name('Description');
 Route::get('/', [ProductController::class, 'showLast4Products'])->name('last-4-products');
-//Route::get('/search', [ProductController::class,'search'])->name('search');
 Route::get('/search', [ProductController::class, 'search']);
-//Route::post('/search', 'ProductController@search');
+
+
+Route::delete('/cart/delete/{id}', 'CartController@deleteFromCart')->name('cart.delete');
 
 
 Route::get('/unsubscribe', function () {

@@ -39,15 +39,20 @@
                 <ion-icon name="star"></ion-icon>
                 <ion-icon name="star-half"></ion-icon>
             </div>
-
-            <form action="{{ route('cart.add') }}" method="POST">
-                @csrf
-                <input type="hidden" name="product_id" value="{{ $product->id }}">
-                <input type="hidden" name="quantity" value="1">
-                <button type="submit" class="add-to-cart-button w-1/2 h-10 focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5">
-                    Add to Bag
-                </button>
-            </form>
+            @guest
+                <a href="/" class="w-2/3 pt-2 h-10 focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5">
+                    Login to Add to Bag
+                </a>
+            @else
+                <form action="{{ route('cart.add') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="add-to-cart-button w-1/2 h-10 focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5">
+                        Add to Bag
+                    </button>
+                </form>
+            @endguest
 
         </div>
     </div>

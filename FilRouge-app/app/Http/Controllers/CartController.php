@@ -41,5 +41,19 @@ class CartController extends Controller
         return view('Cart', compact('cartItems'));
     }
 
+    public function deleteFromCart($id)
+    {
+        $userId = auth()->id();
+
+        $cartItem = Cart::where('user_id', $userId)
+            ->where('id', $id)
+            ->first();
+
+        if ($cartItem) {
+            $cartItem->delete();
+        }
+
+        return response()->json(['message' => 'Item deleted from cart']);
+    }
 
 }

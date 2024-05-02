@@ -12,7 +12,9 @@
     </div>
     <a href="/"><img class="pr-28" src="{{ asset('./assets/images/Logo.png') }}" alt="logo"></a>
     @guest
-        <a href="/login">login</a>
+        <a href="/login" class=" pt-2 h-10 focus:outline-none text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-sm px-5">
+            login
+        </a>
     @endguest
     @auth()
     <div>
