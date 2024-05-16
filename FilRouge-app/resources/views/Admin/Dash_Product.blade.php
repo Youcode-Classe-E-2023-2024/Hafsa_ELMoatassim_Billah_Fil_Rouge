@@ -104,7 +104,7 @@
                                         </form>
 
                                         <!-- edite-->
-                                        <button type="button" data-modal-target="crud-modal3-{{$product->id}}" data-modal-toggle="crud-modal3-{{$product->id}}" class="text-blue-800">
+                                        <button type="button" data-modal-target="crud-modal3-{{$product->id}}" data-modal-toggle="crud-modal3-{{$product->id}}" class="text-blue-800 pb-4 pl-1">
                                             Edit
                                         </button>
                                     </td>

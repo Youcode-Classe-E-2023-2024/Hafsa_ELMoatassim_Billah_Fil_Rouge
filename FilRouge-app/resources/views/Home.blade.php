@@ -51,7 +51,7 @@
                          alt="Image"/>
                 </div>
                 <div class="w-full md:w-3/4 py-2">
-                    <p class="w-full px-2 text-sm tracking-wide leading-tight text-white">Face serum infused with the
+                    <p class="w-full px-2 text-xs tracking-wide leading-tight text-white">Face serum infused with the
                         goodness of argan oil for a radiant and youthful complexion.
                         <br> 25$</p>
                     <div class="flex p-1 gap-1 text-orange-300">
@@ -182,7 +182,7 @@
             Enjoy the benefits of glowing complexion, improved texture,<br> and a boost of confidence in every
             application</p>
     </div>
-    <div class="container mx-auto mx-auto p-4">
+    <div class="container mx-auto mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3">
             <div class="rounded-lg p-4">
                 <div class="px-1 py-4">

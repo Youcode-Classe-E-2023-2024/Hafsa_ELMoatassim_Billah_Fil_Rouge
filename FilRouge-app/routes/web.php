@@ -55,9 +55,11 @@ Route::middleware(['auth'])->group(function () {
         Route::delete('/products/{id}', [ProductController::class, 'softDelete'])->name('products.softDelete');
         Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
 
-        Route::get('/Dash_Contact', function () {
-            return view('Admin.Dash_Contact');
-        });
+        Route::get('/Dash_Contact', [ContactController::class, 'index']);
+
+//        Route::get('/Dash_Contact', function () {
+//            return view('Admin.Dash_Contact');
+//        });
 
 
         Route::delete('/dashboard/{user}', [DashboardController::class, 'banUser'])->name('ban.user');
@@ -106,6 +108,7 @@ Route::get('/unsubscribe', function () {
 Route::get('/FAQ', function () {
     return view('FAQ');
 });
+
 
 Route::get('/About', function () {
     return view('About');

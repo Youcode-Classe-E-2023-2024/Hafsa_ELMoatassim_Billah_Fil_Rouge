@@ -27,7 +27,7 @@ class DashboardController extends Controller
         $user->save();
 
         // Invalidate user's session
-        Auth::logoutOtherDevices($user->password);
+//        Auth::logoutOtherDevices($user->password);
 
         return redirect()->route('dashboard')->with('success', 'User banned successfully.');
     }

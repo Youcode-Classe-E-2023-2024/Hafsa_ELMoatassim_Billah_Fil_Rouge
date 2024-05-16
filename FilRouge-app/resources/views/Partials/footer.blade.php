@@ -23,7 +23,7 @@
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">Home</a>
                     <a href="/All_products"
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">Products</a>
-                    <a href="#"
+                    <a href="/reviews"
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">Feedbacks</a>
                 </div>
             </div>
@@ -32,12 +32,12 @@
                 <p class="font-semibold text-white dark:text-white">Support</p>
 
                 <div class="flex flex-col items-start mt-5 space-y-2">
-                    <a href="#"
+                    <a href="/FAQ"
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">F.A.Q</a>
                     <a href="/Contact"
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">Contact
                         Us</a>
-                    <a href="#"
+                    <a href="/About"
                        class="text-white transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:text-green-600">About
                         Us</a>
                 </div>
