@@ -38,9 +38,4 @@ class ReviewsController extends Controller
         return view('/', compact('reviews'));
     }
 
-
-
-
-
-
 }
